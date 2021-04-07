@@ -14,7 +14,7 @@ function App() {
       <Slider_1 />
       <section className="container padding-top-3x">
         <h3 className="text-center mb-30">Categorias Destacadas</h3>
-        <div className="row">
+        <div >
           <CategoryFeatured  />
           
           

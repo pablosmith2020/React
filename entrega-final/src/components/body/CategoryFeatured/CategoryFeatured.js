@@ -15,11 +15,11 @@ class CategoryFeatured extends Component {
   }
 
   render() {
-    
+    //console.log('data', this.state.DataCategory)
     return (
-      <div>
-        {this.state.DataCategory.map((Category) => {
-            
+      <div className="row">
+        {this.state.DataCategory?.map((Category) => {
+            console.log(this.state.DataCategory)
         return <CategoryFeaturedComponent data={Category}  key={Category.product_id}/>;
         })}
       </div>
