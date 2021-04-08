@@ -53,25 +53,25 @@ class Footer extends React.Component {
               </section>
             </div>
             <div className="col-lg-3 col-md-6">
-              <section class="widget widget-light-skin">
-                <h3 class="widget-title">Nuestras Apps</h3>
-                <a class="market-button apple-button mb-light-skin" href="#">
-                  <span class="mb-subtitle">Descargarla</span>
-                  <span class="mb-title">App Store</span>
+              <section className="widget widget-light-skin">
+                <h3 className="widget-title">Nuestras Apps</h3>
+                <a className="market-button apple-button mb-light-skin" href="#">
+                  <span className="mb-subtitle">Descargarla</span>
+                  <span className="mb-title">App Store</span>
                 </a>
-                <a class="market-button google-button mb-light-skin" href="#">
-                  <span class="mb-subtitle">Download on the</span>
-                  <span class="mb-title">Google Play</span>
+                <a className="market-button google-button mb-light-skin" href="#">
+                  <span className="mb-subtitle">Download on the</span>
+                  <span className="mb-title">Google Play</span>
                 </a>
-                <a class="market-button windows-button mb-light-skin" href="#">
-                  <span class="mb-subtitle">Download on the</span>
-                  <span class="mb-title">Windows Store</span>
+                <a className="market-button windows-button mb-light-skin" href="#">
+                  <span className="mb-subtitle">Download on the</span>
+                  <span className="mb-title">Windows Store</span>
                 </a>
               </section>
             </div>
             <div className="col-lg-3 col-md-6">
-              <section class="widget widget-links widget-light-skin">
-                <h3 class="widget-title">Sobre Nosotros</h3>
+              <section className="widget widget-links widget-light-skin">
+                <h3 className="widget-title">Sobre Nosotros</h3>
                 <ul>
                   <li>
                     <a href="#">Carreras</a>
@@ -92,7 +92,7 @@ class Footer extends React.Component {
               </section>
             </div>
             <div className="col-lg-3 col-md-6">
-              <section class="widget widget-links widget-light-skin">
+              <section className="widget widget-links widget-light-skin">
                 <h3 className="widget-title">Informacion de Cuenta - Envio</h3>
                 <ul>
                   <li>
@@ -137,13 +137,13 @@ class Footer extends React.Component {
                 <div className="clearfix"></div>
                 <div className="input-group input-light">
                   <input
-                    class="form-control"
+                    className="form-control"
                     type="email"
                     name="EMAIL"
                     placeholder="Ingrese su  e-mail"
                   ></input>
-                  <span class="input-group-addon">
-                    <i class="icon-mail"></i>
+                  <span className="input-group-addon">
+                    <i className="icon-mail"></i>
                   </span>
                 </div>
                 <div>
@@ -155,7 +155,7 @@ class Footer extends React.Component {
                   ></input>
 
                   <button className="btn btn-primary" type="submit">
-                    <i class="icon-check"></i>
+                    <i className="icon-check"></i>
                   </button>
                 </div>
                 <span className="form-text text-sm text-white opacity-50">
@@ -168,7 +168,7 @@ class Footer extends React.Component {
 
             <p className="footer-copyright">
               © Derehos Reservados &nbsp;
-              <i class="icon-heart text-danger"></i>
+              <i className="icon-heart text-danger"></i>
               <a href="#" target="_blank">
                 {" "}
                 &nbsp;por Pablo Smith

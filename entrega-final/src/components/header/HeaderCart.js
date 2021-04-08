@@ -6,6 +6,14 @@ import foto3 from "../../img/cart-dropdown/02.jpg";
 
 
 class HeaderCart extends React.Component {
+
+
+   removeElementCart= (position,idProduct)=> {
+
+    
+
+  }
+
   render() {
     return (
 
@@ -23,9 +31,9 @@ class HeaderCart extends React.Component {
             <span
               id="spanFirst-1205"
               className="dropdown-product-remove"
-              onclick="removeElementCart(0,1205)"
+              onClick={this.removeElementCart(0,1205)}
             >
-              <i id="i-1205" class="icon-cross"></i>
+              <i id="i-1205" className="icon-cross"></i>
             </span>
             <a
               id="aSecond-1205"
@@ -54,7 +62,7 @@ class HeaderCart extends React.Component {
             <span
               id="spanFirst-1405"
               className="dropdown-product-remove"
-              onclick="removeElementCart(1,1405)"
+              onClick={this.removeElementCart(1,1405)}
             >
               <i id="i-1405" className="icon-cross"></i>
             </span>
@@ -89,7 +97,7 @@ class HeaderCart extends React.Component {
             <span
               id="spanFirst-8805"
               className="dropdown-product-remove"
-              onclick="removeElementCart(2,8805)"
+              onClick={this.removeElementCart(2,8805)}
             >
               <i id="i-8805" className="icon-cross"></i>
             </span>

@@ -1,5 +1,5 @@
 import CategoryFeatured from "./components/body/CategoryFeatured/CategoryFeatured";
-import Slider_1 from "./components/body/Slider_1";
+import Slider_1 from "./components/body/Slider/Slider_1";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/header";
 
