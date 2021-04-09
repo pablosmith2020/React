@@ -22,31 +22,31 @@ class Footer extends React.Component {
                   </li>
                 </ul>
                 <p>
-                  <a className="navi-link-light" href="#">
+                  <a className="navi-link-light" href="/#">
                     soporte@unishop.com
                   </a>
                 </p>
                 <a
                   className="social-button shape-circle sb-facebook sb-light-skin"
-                  href="#"
+                  href="/#"
                 >
                   <i className="socicon-facebook"></i>
                 </a>
                 <a
                   className="social-button shape-circle sb-twitter sb-light-skin"
-                  href="#"
+                  href="/#"
                 >
                   <i className="socicon-twitter"></i>
                 </a>
                 <a
                   className="social-button shape-circle sb-instagram sb-light-skin"
-                  href="#"
+                  href="/#"
                 >
                   <i className="socicon-instagram"></i>
                 </a>
                 <a
                   className="social-button shape-circle sb-google-plus sb-light-skin"
-                  href="#"
+                  href="/#"
                 >
                   <i className="socicon-googleplus"></i>
                 </a>
@@ -55,15 +55,15 @@ class Footer extends React.Component {
             <div className="col-lg-3 col-md-6">
               <section className="widget widget-light-skin">
                 <h3 className="widget-title">Nuestras Apps</h3>
-                <a className="market-button apple-button mb-light-skin" href="#">
+                <a className="market-button apple-button mb-light-skin" href="/#">
                   <span className="mb-subtitle">Descargarla</span>
                   <span className="mb-title">App Store</span>
                 </a>
-                <a className="market-button google-button mb-light-skin" href="#">
+                <a className="market-button google-button mb-light-skin" href="/#">
                   <span className="mb-subtitle">Download on the</span>
                   <span className="mb-title">Google Play</span>
                 </a>
-                <a className="market-button windows-button mb-light-skin" href="#">
+                <a className="market-button windows-button mb-light-skin" href="/#">
                   <span className="mb-subtitle">Download on the</span>
                   <span className="mb-title">Windows Store</span>
                 </a>
@@ -74,19 +74,19 @@ class Footer extends React.Component {
                 <h3 className="widget-title">Sobre Nosotros</h3>
                 <ul>
                   <li>
-                    <a href="#">Carreras</a>
+                    <a href="/#">Carreras</a>
                   </li>
                   <li>
-                    <a href="#">Acerca de Nosotros</a>
+                    <a href="/#">Acerca de Nosotros</a>
                   </li>
                   <li>
-                    <a href="#">Nuestra Historia</a>
+                    <a href="/#">Nuestra Historia</a>
                   </li>
                   <li>
-                    <a href="#">Servicios</a>
+                    <a href="/#">Servicios</a>
                   </li>
                   <li>
-                    <a href="#">Nuestro Blog</a>
+                    <a href="/#">Nuestro Blog</a>
                   </li>
                 </ul>
               </section>
@@ -96,22 +96,22 @@ class Footer extends React.Component {
                 <h3 className="widget-title">Informacion de Cuenta - Envio</h3>
                 <ul>
                   <li>
-                    <a href="#">Su Cuenta</a>
+                    <a href="/#">Su Cuenta</a>
                   </li>
                   <li>
-                    <a href="#">Tasas de Envios &amp; Politicas</a>
+                    <a href="/#">Tasas de Envios &amp; Politicas</a>
                   </li>
                   <li>
-                    <a href="#">Reembolsos $ Reemplazos</a>
+                    <a href="/#">Reembolsos $ Reemplazos</a>
                   </li>
                   <li>
-                    <a href="#">Impuestos</a>
+                    <a href="/#">Impuestos</a>
                   </li>
                   <li>
-                    <a href="#">Informacion de Envio</a>
+                    <a href="/#">Informacion de Envio</a>
                   </li>
                   <li>
-                    <a href="#">Programa de Afiliacion</a>
+                    <a href="/#">Programa de Afiliacion</a>
                   </li>
                 </ul>
               </section>
@@ -169,7 +169,7 @@ class Footer extends React.Component {
             <p className="footer-copyright">
               © Derehos Reservados &nbsp;
               <i className="icon-heart text-danger"></i>
-              <a href="#" target="_blank">
+              <a href="/#" target="_blank">
                 {" "}
                 &nbsp;por Pablo Smith
               </a>

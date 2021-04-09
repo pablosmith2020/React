@@ -18,7 +18,7 @@ class HeaderCart extends React.Component {
     return (
 
         <div className="cart">
-        <a id="BtnHeaderCart" href="cart.html"></a>
+        <a id="BtnHeaderCart" href="cart.html"> </a>
         <i className="icon-bag"></i>
         <span id="CountProductCart" className="count">
           3

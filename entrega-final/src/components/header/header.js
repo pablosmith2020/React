@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../../css/App.css";
 import "../../css/styles.css";
@@ -12,9 +12,18 @@ import HeaderCart from "./HeaderCart";
 
 const myStyleBody = { overflow: "visible" };
 
-class Header extends React.Component {
-  render() {
-    return (
+
+
+ export const  Header =() => {
+  
+  const [flag, setFlag] = useState(null);
+  const  handleMenuMobile =()=> {
+
+    setFlag(!flag);
+    return console.log(flag)
+   }
+  
+  return (
       <div id="index" className="hasScrollbar" style={myStyleBody}>
         <div className="offcanvas-container" id="mobile-menu">
           <a className="account-link" href="account-orders.html">
@@ -26,13 +35,13 @@ class Header extends React.Component {
           <nav className="offcanvas-menu">
             <ul className="menu">
               <li className="has-children">
-                <a href="#">
+                <a href="/#">
                   <span>Shop</span>
                 </a>
                 <span className="sub-menu-toggle"></span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
                     <a href="shop-categories.html">Ver Categorias</a>
@@ -50,7 +59,7 @@ class Header extends React.Component {
                     <span className="sub-menu-toggle"></span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
                         <a href="shop-list-ls.html">List Left Sidebar</a>
@@ -78,166 +87,166 @@ class Header extends React.Component {
 
               <li className="has-children">
                 <span>
-                  <a href="#">Categories</a>
+                  <a href="/#">Categories</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Men's Shoes</a>
+                      <a href="/#">Men's Shoes</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Sneakers</a>
+                        <a href="/#">Sneakers</a>
                       </li>
                       <li>
-                        <a href="#">Loafers</a>
+                        <a href="/#">Loafers</a>
                       </li>
                       <li>
-                        <a href="#">Boat Shoes</a>
+                        <a href="/#">Boat Shoes</a>
                       </li>
                       <li>
-                        <a href="#">Sandals</a>
+                        <a href="/#">Sandals</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Women's Shoes</a>
+                      <a href="/#">Women's Shoes</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Sandals</a>
+                        <a href="/#">Sandals</a>
                       </li>
                       <li>
-                        <a href="#">Flats</a>
+                        <a href="/#">Flats</a>
                       </li>
                       <li>
-                        <a href="#">Sneakers</a>
+                        <a href="/#">Sneakers</a>
                       </li>
                       <li>
-                        <a href="#">Heels</a>
+                        <a href="/#">Heels</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Men's Clothing</a>
+                      <a href="/#">Men's Clothing</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Shirts &amp; Tops</a>
+                        <a href="/#">Shirts &amp; Tops</a>
                       </li>
                       <li>
-                        <a href="#">Pants</a>
+                        <a href="/#">Pants</a>
                       </li>
                       <li>
-                        <a href="#">Jackets</a>
+                        <a href="/#">Jackets</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Women's Clothing</a>
+                      <a href="/#">Women's Clothing</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Dresses</a>
+                        <a href="/#">Dresses</a>
                       </li>
                       <li>
-                        <a href="#">Shirts &amp; Tops</a>
+                        <a href="/#">Shirts &amp; Tops</a>
                       </li>
                       <li>
-                        <a href="#">Shorts</a>
+                        <a href="/#">Shorts</a>
                       </li>
                       <li>
-                        <a href="#">Swimwear</a>
+                        <a href="/#">Swimwear</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Bags</a>
+                      <a href="/#">Bags</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Handbags</a>
+                        <a href="/#">Handbags</a>
                       </li>
                       <li>
-                        <a href="#">Backpacks</a>
+                        <a href="/#">Backpacks</a>
                       </li>
                       <li>
-                        <a href="#">Luggage</a>
+                        <a href="/#">Luggage</a>
                       </li>
                       <li>
-                        <a href="#">Wallets</a>
+                        <a href="/#">Wallets</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <span>
-                      <a href="#">Accessories</a>
+                      <a href="/#">Accessories</a>
                       <span className="sub-menu-toggle"></span>
                     </span>
                     <ul className="offcanvas-submenu">
                       <li className="back-btn">
-                        <a href="#">Back</a>
+                        <a href="/#">Back</a>
                       </li>
                       <li>
-                        <a href="#">Sunglasses</a>
+                        <a href="/#">Sunglasses</a>
                       </li>
                       <li>
-                        <a href="#">Hats</a>
+                        <a href="/#">Hats</a>
                       </li>
                       <li>
-                        <a href="#">Watches</a>
+                        <a href="/#">Watches</a>
                       </li>
                       <li>
-                        <a href="#">Jewelry</a>
+                        <a href="/#">Jewelry</a>
                       </li>
                       <li>
-                        <a href="#">Belts</a>
+                        <a href="/#">Belts</a>
                       </li>
                       <li>
-                        <a href="#">View All</a>
+                        <a href="/#">View All</a>
                       </li>
                     </ul>
                   </li>
@@ -257,28 +266,28 @@ class Header extends React.Component {
             </a>
             <a
               className="social-button sb-facebook shape-none sb-dark"
-              href="#"
+              href="/#"
               target="_blank"
             >
               <i className="socicon-facebook"></i>
             </a>
             <a
               className="social-button sb-twitter shape-none sb-dark"
-              href="#"
+              href="/#"
               target="_blank"
             >
               <i className="socicon-twitter"></i>
             </a>
             <a
               className="social-button sb-instagram shape-none sb-dark"
-              href="#"
+              href="/#"
               target="_blank"
             >
               <i className="socicon-instagram"></i>
             </a>
             <a
               className="social-button sb-pinterest shape-none sb-dark"
-              href="#"
+              href="/#"
               target="_blank"
             >
               <i className="socicon-pinterest"></i>
@@ -286,7 +295,7 @@ class Header extends React.Component {
           </div>
 
           <div className="topbar-column">
-            <a className="hidden-md-down" href="#">
+            <a className="hidden-md-down" href="/#">
               <i className="icon-download"></i>Descargue la APP
             </a>
 
@@ -304,11 +313,11 @@ class Header extends React.Component {
                     <option value="$">PESOS</option>
                   </select>
                 </div>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/#">
                   <img src={flagImage} alt="Argentina" />
                   Argentina
                 </a>
-                <a className="dropdown-item" href="#"></a>
+                <a className="dropdown-item" href="/#"> </a>
               </div>
             </div>
           </div>
@@ -331,16 +340,23 @@ class Header extends React.Component {
 
           <div className="site-branding">
             <div className="inner">
-              <a
+              <div
+                id="ButtonBurger"  
                 className="offcanvas-toggle cats-toggle"
-                href="#shop-categories"
+                
+                onClick={handleMenuMobile}  
                 data-toggle="offcanvas"
-              ></a>
+              > </div>
+
+              {/* PMS aca debo invocar al componentecMobileMenu.js*/}
+              {flag === true && <MobileMenu />}
               <a
                 className="offcanvas-toggle menu-toggle"
                 href="#mobile-menu"
                 data-toggle="offcanvas"
-              ></a>
+              >
+              </a>
+              
               <a className="site-logo" href="index.html">
                 <img src={logo} alt="Logo" />
               </a>
@@ -349,7 +365,7 @@ class Header extends React.Component {
           <nav className="site-menu">
             <ul>
               <li>
-                <a href="#">
+                <a href="/#">
                   <span>Shop</span>
                 </a>
                 <ul className="sub-menu">
@@ -395,7 +411,7 @@ class Header extends React.Component {
               </li>
 
               <li className="has-megamenu">
-                <a href="#">
+                <a href="/#">
                   <span>Destacado</span>
                 </a>
                 <ul className="mega-menu">
@@ -403,22 +419,22 @@ class Header extends React.Component {
                     <span className="mega-menu-title">Top Categories</span>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Zapatos de Hombre</a>
+                        <a href="/#">Zapatos de Hombre</a>
                       </li>
                       <li>
-                        <a href="#">Zapatos de Mujer</a>
+                        <a href="/#">Zapatos de Mujer</a>
                       </li>
                       <li>
-                        <a href="#">Remeras</a>
+                        <a href="/#">Remeras</a>
                       </li>
                       <li>
-                        <a href="#">Trajes de baño</a>
+                        <a href="/#">Trajes de baño</a>
                       </li>
                       <li>
-                        <a href="#">Shorts / Pantalones</a>
+                        <a href="/#">Shorts / Pantalones</a>
                       </li>
                       <li>
-                        <a href="#">Accesorios</a>
+                        <a href="/#">Accesorios</a>
                       </li>
                     </ul>
                   </li>
@@ -426,22 +442,22 @@ class Header extends React.Component {
                     <span className="mega-menu-title">Tienda Especial</span>
                     <ul className="sub-menu">
                       <li>
-                        <a href="#">Niños</a>
+                        <a href="/#">Niños</a>
                       </li>
                       <li>
-                        <a href="#">Ropa de Natacion</a>
+                        <a href="/#">Ropa de Natacion</a>
                       </li>
                       <li>
-                        <a href="#">Ropa Deportiva</a>
+                        <a href="/#">Ropa Deportiva</a>
                       </li>
                       <li>
-                        <a href="#">Ropa Outdoor</a>
+                        <a href="/#">Ropa Outdoor</a>
                       </li>
                       <li>
-                        <a href="#">Ropa Formal</a>
+                        <a href="/#">Ropa Formal</a>
                       </li>
                       <li>
-                        <a href="#">Accesorios</a>
+                        <a href="/#">Accesorios</a>
                       </li>
                     </ul>
                   </li>
@@ -462,7 +478,7 @@ class Header extends React.Component {
                           <h3 className="text-bold text-light text-shadow">
                             Lentes de Sol
                           </h3>
-                          <a className="btn btn-sm btn-primary" href="#">
+                          <a className="btn btn-sm btn-primary" href="/#">
                             Shop Now
                           </a>
                         </div>
@@ -482,7 +498,7 @@ class Header extends React.Component {
                         <h4 className="text-light text-thin text-shadow">
                           Ahorra hasta el 50%!
                         </h4>
-                        <a className="btn btn-sm btn-primary" href="#">
+                        <a className="btn btn-sm btn-primary" href="/#">
                           Learn More
                         </a>
                       </div>
@@ -505,7 +521,7 @@ class Header extends React.Component {
                   <i className="icon-search"></i>
                 </div>
                 <div id="ImgAccount" className="account">
-                  <a href="#"></a>
+                  <a href="/#"> </a>
                   <ul
                     id="MenuAccount"
                     className="toolbar-dropdown"
@@ -513,7 +529,7 @@ class Header extends React.Component {
                   >
                     <li className="sub-menu-user">
                       <div id="divMenuAccount" className="user-info">
-                        <h6 id="nameUser" className="user-name"></h6>
+                        <h6 id="nameUser" className="user-name"> </h6>
                         <span
                           id="rewardPoint"
                           className="text-xs text-muted"
@@ -533,12 +549,12 @@ class Header extends React.Component {
                     </li>
                     <li className="sub-menu-separator"></li>
                     <li>
-                      <a id="BtnLogout" href="#">
+                      <a id="BtnLogout" href="/#">
                         <i className="icon-unlock"></i>Logout
                       </a>
                     </li>
                   </ul>
-                  <a href="account-login.html"></a>
+                  <a href="account-login.html"> </a>
                   <i
                     href="/account-login.html"
                     className="icon-head"
@@ -554,5 +570,4 @@ class Header extends React.Component {
       </div>
     );
   }
-}
 export default Header;

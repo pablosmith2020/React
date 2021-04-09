@@ -19,7 +19,7 @@ class CategoryFeatured extends Component {
     return (
       <div className="row">
         {this.state.DataCategory?.map((Category) => {
-            console.log(Category)
+            //console.log(Category)
         return <CategoryFeaturedComponent data={Category}  key={Category.product_id}/>;
         })}
       </div>

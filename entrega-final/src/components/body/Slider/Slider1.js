@@ -8,11 +8,10 @@ import Image_2 from "../../../img/hero-slider/01.png";
 import Image_3 from "../../../img/hero-slider/logo03.png";
 import Image_4 from "../../../img/hero-slider/03.png";
 import Image_5 from "../../../img/hero-slider/logo02.png";
-import Image_6 from "../../../img/hero-slider/logo01.png";
 import Image_7 from "../../../img/hero-slider/02.png";
 
-const myStyleBody3 = { backgroundImage: "url(" + backgroundImage_1 + ")" };
-const myStyleBody1 = { width: "1349px" };
+
+
 const myStyleBody2 = { width: "125px" };
 
 
@@ -30,7 +29,7 @@ const Col = React.memo(function Col(props) {
   );
 });
 
-class Slider_1 extends React.PureComponent {
+class Slider1 extends React.PureComponent {
   constructor(props) {
     super(props);
     this.slider = React.createRef();
@@ -205,4 +204,4 @@ class Slider_1 extends React.PureComponent {
   }
 }
 
-export default Slider_1;
+export default Slider1;

@@ -1,11 +1,12 @@
-import React from "react";
+
 
 const myStyleBody = { overflow: "visible" };
 
-class MobileMenu extends React.Component {
-  render() {
-    return (
-      <div id="index" className="hasScrollbar" style={myStyleBody}>
+export const  MobileMenu =() => {
+
+     return (
+      
+      <div id="index" className="hasScrollbar offcanvas-open" style={myStyleBody}>
         <div className="offcanvas-container" id="shop-categories">
           <div className="offcanvas-header">
             <h3 className="offcanvas-title">Categorias</h3>
@@ -14,183 +15,183 @@ class MobileMenu extends React.Component {
             <ul className="menu">
               <li className="has-children">
                 <span>
-                  <a href="#">Zapatos de Hombre</a>
+                  <a href="/#">Zapatos de Hombre</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Zapatillas</a>
+                    <a href="/#">Zapatillas</a>
                   </li>
                   <li>
-                    <a href="#">Mocasines</a>
+                    <a href="/#">Mocasines</a>
                   </li>
                   <li>
-                    <a href="#">De Vestir</a>
+                    <a href="/#">De Vestir</a>
                   </li>
                   <li>
-                    <a href="#">Sandalias</a>
+                    <a href="/#">Sandalias</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Zapatos de Mujer</a>
+                  <a href="/#">Zapatos de Mujer</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Sandalias</a>
+                    <a href="/#">Sandalias</a>
                   </li>
                   <li>
-                    <a href="#">Pantalones</a>
+                    <a href="/#">Pantalones</a>
                   </li>
                   <li>
-                    <a href="#">Zapatillas</a>
+                    <a href="/#">Zapatillas</a>
                   </li>
                   <li>
-                    <a href="#">Tacones</a>
+                    <a href="/#">Tacones</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Ropa de Hombre</a>
+                  <a href="/#">Ropa de Hombre</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Camisas</a>
+                    <a href="/#">Camisas</a>
                   </li>
                   <li>
-                    <a href="#">Pantalones</a>
+                    <a href="/#">Pantalones</a>
                   </li>
                   <li>
-                    <a href="#">Chaquetas</a>
+                    <a href="/#">Chaquetas</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Ropa de Mujer</a>
+                  <a href="/#">Ropa de Mujer</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Vestidos</a>
+                    <a href="/#">Vestidos</a>
                   </li>
                   <li>
-                    <a href="#">Remeras</a>
+                    <a href="/#">Remeras</a>
                   </li>
                   <li>
-                    <a href="#">Shorts</a>
+                    <a href="/#">Shorts</a>
                   </li>
                   <li>
-                    <a href="#">Traje de baño</a>
+                    <a href="/#">Traje de baño</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Ropa de Nene</a>
+                  <a href="/#">Ropa de Nene</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Botas</a>
+                    <a href="/#">Botas</a>
                   </li>
                   <li>
-                    <a href="#">Sandalias</a>
+                    <a href="/#">Sandalias</a>
                   </li>
                   <li>
-                    <a href="#">Pantalones</a>
+                    <a href="/#">Pantalones</a>
                   </li>
                   <li>
-                    <a href="#">Mocasines</a>
+                    <a href="/#">Mocasines</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Bags</a>
+                  <a href="/#">Bags</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Bolsos</a>
+                    <a href="/#">Bolsos</a>
                   </li>
                   <li>
-                    <a href="#">Mochilas</a>
+                    <a href="/#">Mochilas</a>
                   </li>
                   <li>
-                    <a href="#">Equipaje</a>
+                    <a href="/#">Equipaje</a>
                   </li>
                   <li>
-                    <a href="#">Carteras</a>
+                    <a href="/#">Carteras</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos|</a>
+                    <a href="/#">Ver Todos|</a>
                   </li>
                 </ul>
               </li>
               <li className="has-children">
                 <span>
-                  <a href="#">Accesorios</a>
+                  <a href="/#">Accesorios</a>
                   <span className="sub-menu-toggle"></span>
                 </span>
                 <ul className="offcanvas-submenu">
                   <li className="back-btn">
-                    <a href="#">Back</a>
+                    <a href="/#">Back</a>
                   </li>
                   <li>
-                    <a href="#">Lentes de Sol</a>
+                    <a href="/#">Lentes de Sol</a>
                   </li>
                   <li>
-                    <a href="#">Sombreros</a>
+                    <a href="/#">Sombreros</a>
                   </li>
                   <li>
-                    <a href="#">Relojes</a>
+                    <a href="/#">Relojes</a>
                   </li>
                   <li>
-                    <a href="#">Joyeria</a>
+                    <a href="/#">Joyeria</a>
                   </li>
                   <li>
-                    <a href="#">Cinturones</a>
+                    <a href="/#">Cinturones</a>
                   </li>
                   <li>
-                    <a href="#">Ver Todos</a>
+                    <a href="/#">Ver Todos</a>
                   </li>
                 </ul>
               </li>
@@ -200,5 +201,5 @@ class MobileMenu extends React.Component {
       </div>
     );
   }
-}
+
 export default MobileMenu;

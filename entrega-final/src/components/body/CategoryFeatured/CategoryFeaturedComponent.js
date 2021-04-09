@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+
 
 import Category1Img1 from "../../../img/shop/categories/category1/01.jpg";
 import Category1Img2 from "../../../img/shop/categories/category1/02.jpg";
@@ -17,16 +17,17 @@ const CategoryFeaturedComponent = ({ data }) => {
     switch (param) {
       case "1":
         return [
-          <img id={data.category_id} src={Category1Img1} alt="Category"></img>,
+          <img key={data.category_id} id={data.category_id} src={Category1Img1} alt="Category"></img>,
         ];
       case "2":
         return [
-          <img id={data.category_id} src={Category2Img1} alt="Category"></img>,
+          <img key={data.category_id} id={data.category_id} src={Category2Img1} alt="Category"></img>,
         ];
       case "3":
         return [
-          <img id={data.category_id} src={Category3Img1} alt="Category"></img>,
+          <img key={data.category_id} id={data.category_id} src={Category3Img1} alt="Category"></img>,
         ];
+        default:      return null
     }
   };
 
@@ -34,19 +35,20 @@ const CategoryFeaturedComponent = ({ data }) => {
     switch (param) {
       case "1":
         return [
-          <img src={Category1Img2} alt="Category"></img>,
-          <img src={Category1Img3} alt="Category"></img>,
+          <img key="1" src={Category1Img2} alt="Category"></img>,
+          <img key="2" src={Category1Img3} alt="Category"></img>,
         ];
       case "2":
         return [
-          <img src={Category2Img2} alt="Category"></img>,
-          <img src={Category2Img3} alt="Category"></img>,
+          <img key="1" src={Category2Img2} alt="Category"></img>,
+          <img key="2" src={Category2Img3} alt="Category"></img>,
         ];
       case "3":
         return [
-          <img src={Category3Img2} alt="Category"></img>,
-          <img src={Category3Img3} alt="Category"></img>,
+          <img key="1" src={Category3Img2} alt="Category"></img>,
+          <img key="2" src={Category3Img3} alt="Category"></img>,
         ];
+        default:      return null
     }
   };
 
