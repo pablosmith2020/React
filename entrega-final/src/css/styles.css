@@ -6031,13 +6031,13 @@ video {
 }
 .offcanvas-container {
     position: fixed;
-    top: 0;
+    top: 20;
     left: 0;
     width: 290px;
     height: 100%;
     background-color: #374250;
     box-shadow: inset -4px 0 17px 0 rgba(0, 0, 0, 0.35);
-    visibility: hidden;
+    visibility:hidden ;/* hidden*/
     z-index: 1;
     overflow-y: auto
 }

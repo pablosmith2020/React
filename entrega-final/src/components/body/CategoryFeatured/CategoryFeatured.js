@@ -1,29 +1,35 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Categorys } from "../../Product/CategoryFeaturedData";
-import CategoryFeaturedComponent from './CategoryFeaturedComponent'
+import CategoryFeaturedComponent from "./CategoryFeaturedComponent";
 
-class CategoryFeatured extends Component {
-  constructor() {
-    super();
-    this.state = {
-      DataCategory: [],
-    };
-  }
+const CategoryFeatured = () => {
+  const [DataCategory, SetDataCategory] = useState([]);
 
-  componentDidMount() {
-    this.setState({ DataCategory: Categorys });
-  }
+  useEffect(() => {
+    SetDataCategory(Categorys);
+  }, []);
 
-  render() {
-    //console.log('data', this.state.DataCategory)
-    return (
-      <div className="row">
-        {this.state.DataCategory?.map((Category) => {
-            //console.log(Category)
-        return <CategoryFeaturedComponent data={Category}  key={Category.product_id}/>;
-        })}
-      </div>
-    );
-  }
-}
+  const ItemPromise = new Promise((data, error) => {
+    setTimeout(() => {
+      data(Categorys);
+    }, 2000);
+  });
+
+  console.log(ItemPromise);
+  //console.log('data', this.state.DataCategory)
+  return (
+    <div className="row">
+      {DataCategory?.map((Category) => {
+        //console.log(Category)
+        return (
+          <CategoryFeaturedComponent
+            data={Category}
+            key={Category.product_id}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 export default CategoryFeatured;
