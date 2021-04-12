@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-import "../../css/App.css";
-import "../../css/styles.css";
-import "../../css/vendor.css";
 import flagImage from "../../img/flags/AR.png";
 import Background1 from "../../img/banners/02.jpg";
 import Background2 from "../../img/banners/03.jpg";
@@ -18,7 +15,7 @@ export const Header = () => {
   const handleMenuMobile = () => {
     setFlag(!flag);
 
-    flag == true ? setVisibility("hidden") : setVisibility("visible");
+    flag === true ? setVisibility("hidden") : setVisibility("visible");
 
     console.log("Header flag: " + flag);
     //console.log('Header visibility: ' + visibility)
@@ -353,7 +350,7 @@ export const Header = () => {
             </div>
 
             {/* PMS aca debo invocar al componentecMobileMenu.js*/}
-            {flag == true && <MobileMenu visibility={flag} />}
+            {flag === true && <MobileMenu visibility={flag} />}
             <a
               className="offcanvas-toggle menu-toggle"
               href="#mobile-menu"

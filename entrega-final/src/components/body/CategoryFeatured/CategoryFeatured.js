@@ -15,7 +15,7 @@ const CategoryFeatured = () => {
     }, 2000);
   });
 
-  console.log(ItemPromise);
+  //console.log(ItemPromise);
   //console.log('data', this.state.DataCategory)
   return (
     <div className="row">

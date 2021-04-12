@@ -10,6 +10,8 @@ import Category3Img1 from "../../../img/shop/categories/category3/01.jpg";
 import Category3Img2 from "../../../img/shop/categories/category3/02.jpg";
 import Category3Img3 from "../../../img/shop/categories/category3/03.jpg";
 
+import ItemDescription from '../ItemDescription/ItemDescription'
+
 const CategoryFeaturedComponent = ({ data }) => {
   const mySwitchFunctionHeaderImg = (param) => {
     switch (param) {
@@ -67,6 +69,7 @@ const CategoryFeaturedComponent = ({ data }) => {
     }
   };
 
+
   return (
     <div className="col-md-4 col-sm-6 ">
       <div className="card mb-30">
@@ -86,6 +89,7 @@ const CategoryFeaturedComponent = ({ data }) => {
           <a
             className="btn btn-outline-primary btn-sm"
             href="shop-grid-ls.html"
+          
           >
             Ver Productos
           </a>

@@ -1,6 +1,7 @@
 import React from "react";
 import foto1 from "../../img/payment_methods.png";
 
+
 class Footer extends React.Component {
   render() {
     return (

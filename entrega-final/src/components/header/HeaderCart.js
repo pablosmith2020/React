@@ -1,8 +1,8 @@
 import React from "react";
+
 import foto1 from "../../img/cart-dropdown/00.jpg";
 import foto2 from "../../img/cart-dropdown/01.jpg";
 import foto3 from "../../img/cart-dropdown/02.jpg";
-
 
 
 class HeaderCart extends React.Component {
