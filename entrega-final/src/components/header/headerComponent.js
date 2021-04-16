@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 import flagImage from "../../img/flags/AR.png";
 import Background1 from "../../img/banners/02.jpg";
@@ -11,14 +12,10 @@ const myStyleBody = { overflow: "visible" };
 
 export const Header = () => {
   const [flag, setFlag] = useState(false);
-  const [visibility, setVisibility] = useState("arranco");
+
   const handleMenuMobile = () => {
     setFlag(!flag);
 
-    flag === true ? setVisibility("hidden") : setVisibility("visible");
-
-    console.log("Header flag: " + flag);
-    //console.log('Header visibility: ' + visibility)
   };
 
   return (
@@ -30,6 +27,8 @@ export const Header = () => {
             <span className="text-sm text-white opacity-60">290 Puntos</span>
           </div>
         </a>
+
+        {/*Menu Nav*/}
         <nav className="offcanvas-menu">
           <ul className="menu">
             <li className="has-children">
@@ -44,12 +43,14 @@ export const Header = () => {
                 <li>
                   <a href="shop-categories.html">Ver Categorias</a>
                 </li>
-                <li className="has-children">
-                  <a href="shop-grid-ls.html">
-                    <span>Ver en Grilla</span>
-                  </a>
-                  <span className="sub-menu-toggle"></span>
-                </li>
+                <NavLink activeClassName="active" exact to="/Product">
+                  <li className="has-children">
+                    <a href="/#">
+                      <span>Ver Producto</span>
+                    </a>
+                    <span className="sub-menu-toggle"></span>
+                  </li>
+                </NavLink>
                 <li className="has-children">
                   <span>
                     <a href="shop-list-ls.html">Shop List</a>
@@ -75,7 +76,7 @@ export const Header = () => {
                   <a href="shop-single.html">Single Product</a>
                 </li>
                 <li>
-                  <a href="cart.html">Cart</a>
+                  <a href="/#">Cart</a>
                 </li>
                 <li>
                   <a href="checkout.html">Checkout</a>
@@ -356,10 +357,10 @@ export const Header = () => {
               href="#mobile-menu"
               data-toggle="offcanvas"
             ></a>
-
-            <a className="site-logo" href="index.html">
-              <img src={logo} alt="Logo" />
-            </a>
+            <Link to='/' className="site-logo">
+            {/* <a className="site-logo" href="index.html"> */}
+              <img src={logo} alt="Logo" /></Link>
+            
           </div>
         </div>
         <nav className="site-menu">
@@ -370,7 +371,9 @@ export const Header = () => {
               </a>
               <ul className="sub-menu">
                 <li>
-                  <a href="shop-categories.html">Categorias</a>
+             {/*      <a href="shop-categories.html">Buscador Productos</a> */}
+                  <Link to="/GridProduct">Buscador Productos</Link>
+                  
                 </li>
                 <li className="has-children">
                   <a href="shop-grid-ls.html">

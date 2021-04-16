@@ -7,10 +7,7 @@ import foto3 from "../../img/cart-dropdown/02.jpg";
 
 class HeaderCart extends React.Component {
 
-
    removeElementCart= (position,idProduct)=> {
-
-    
 
   }
 

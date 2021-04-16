@@ -1,45 +1,38 @@
 import "../src/css/styles.css";
 import "../src/css/App.css";
 import "../src/css/vendor.css";
-
-import CategoryFeatured from "./components/body/CategoryFeatured/CategoryFeatured";
-import Slider_1 from "./components/body/Slider/Slider1";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/header";
-import Desafio7 from './components/Desafio7'
-
-import ItemDescription from './components/body/ItemDescription/ItemDescription'
+// Paso 1 - Importarnos tools de REACT ROUTER DOM
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-  
+import Home from './Views/body/bodyHome'
+import Footer from "./Views/footer/viewFooter";
+import Header from "./Views/header/viewHeader";
+import Product from './Views/body/viewProduct';
+import gridProducts from './Views/body/viewGridProducts';
+
+
+
+
 function App() {
-
-
   return (
-    <div className="App">
-      <Header />
-      <Slider_1 />
-      <section className="container padding-top-3x">
-        <h3 className="text-center mb-30">Categorias Destacadas</h3>
-        <div >
-          <CategoryFeatured  />
-        </div>
-        
-  
+    <Router>
+      <div className="offcanvas-wrapper">
+      
+        <Header />
 
-        <div className="text-center">
-          <a className="btn btn-outline-secondary margin-top-none" href="shop-categories.html">
-            Ver Todas las Categorias
-          </a>
-        </div>
+        <Switch>
+          <Route path='/' exact component={Home}/>
+          
+          <Route path='/Product'  component={Product}/>
+         
+          <Route path='/GridProduct'  component={gridProducts}/>
+         
+        </Switch>
 
-        
-        <ItemDescription />
-
-        <Desafio7 />
-      </section>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

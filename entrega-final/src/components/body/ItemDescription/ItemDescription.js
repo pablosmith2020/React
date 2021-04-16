@@ -6,6 +6,7 @@ import img1 from "../../../img/reviews/01.jpg";
 import img2 from "../../../img/reviews/02.jpg";
 import img3 from "../../../img/reviews/03.jpg";
 
+
 const ProductId = 1;
 
 export const itemDescription = () => {

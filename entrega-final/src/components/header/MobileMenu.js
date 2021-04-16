@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-
 const myStyleBody = { overflow: "visible" };
 
 export const MobileMenu = (Visibility) => {
   const [myStyleMenu, setStyleMenu] = useState({ visibility: "hidden" });
-  const [visibility, setVisibility] = useState(Visibility);
 
-  useEffect(() => {
-    setStyleMenu({ visibility: "visible" });
-    console.log("Montando MobileMenu");
-
-    // componentWillUnmount()
-    setStyleMenu({ visibility: "hidden" });
-    return () => console.log("Desmontando el MobileMenu");
-  }, []);
+  useEffect(() => {}, []);
 
   console.log("MobileHeader Estilos: " + setStyleMenu);
 
