@@ -1,9 +1,9 @@
 import Product from "../../components/body/ItemDescription/ItemDescription";
 
-const viewProduct = () => {
+const viewProduct = ({match}) => {
   return (
     <div>
-      <Product />
+      <Product  data={match.params.id}/>
     </div>
   );
 };

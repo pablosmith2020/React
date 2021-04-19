@@ -1,3 +1,6 @@
+
+import { Link } from 'react-router-dom';
+
 import Img1 from "../../../img/products/01.jpg";
 import Img2 from "../../../img/products/02.jpg";
 import Img3 from "../../../img/products/03.jpg";
@@ -113,12 +116,10 @@ const GridProductCard = ({ data }) => {
         <div className="product-badge text-danger">
           {data.discount_rate} Off
         </div>
-        <a className="product-thumb" href="/#">
-          {/* <img src={Img1} alt="Product"></img> */}
+        <Link to={`Product/${data.product_id}`} className="product-thumb"></Link>
           {mySwitchFunctionImg(data.product_id)}
-        </a>
         <h3 className="product-title">
-          <a href="/#">{data.description}</a>
+        <Link to={`Product/${data.product_id}`} className="product-thumb">{data.description}</Link>
         </h3>
         <h4 className="product-price">
           <del>{data.price_old}</del>

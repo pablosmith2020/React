@@ -1,5 +1,7 @@
-import ItemDescriptionCarrusel from "./ItemDescriptionCarrusel";
 
+import React, { useState, useEffect } from "react";
+import { Categorys } from "../../Product/ProductsGridCard";
+import ItemDescriptionCarrusel from "./ItemDescriptionCarrusel";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import img1 from "../../../img/reviews/01.jpg";
@@ -9,7 +11,28 @@ import img3 from "../../../img/reviews/03.jpg";
 
 const ProductId = 1;
 
-export const itemDescription = () => {
+ const ItemDescription = ({data}) => {
+  console.log(data)
+
+  const [DataCategory, SetCategory] = useState({});
+
+  useEffect(() => {
+    SetCategory(Categorys);
+
+    
+  }, []);
+
+ 
+console.log(Categorys)
+
+
+
+
+
+
+
+
+
   return (
     <div className="container padding-bottom-3x mb-1">
       <div className="row">
@@ -415,4 +438,4 @@ export const itemDescription = () => {
     </div>
   );
 };
-export default itemDescription;
+export default ItemDescription;
