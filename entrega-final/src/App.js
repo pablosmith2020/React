@@ -10,29 +10,30 @@ import Footer from "./Views/footer/viewFooter";
 import Header from "./Views/header/viewHeader";
 import Product from './Views/body/viewProduct';
 import gridProducts from './Views/body/viewGridProducts';
-
+import {CartProvider} from './components/CartContext/CartContext'
 
 
 
 function App() {
   return (
-    <Router>
-      <div className="offcanvas-wrapper">
-      
-        <Header />
+    <CartProvider >
+      <Router>
+        <div className="offcanvas-wrapper">
+        
+          <Header />
 
-        <Switch>
-          <Route path='/' exact component={Home}/>
+          <Switch>
+            <Route path='/' exact component={Home}/>
+            <Route path='/GridProduct' exact  component={gridProducts}/>
+            <Route path='/Product/:id' component={Product}/>
           
-          <Route path='/Product:id' component={Product}/>
-         
-          <Route path='/GridProduct' exact  component={gridProducts}/>
-         
-        </Switch>
-
-        <Footer />
-      </div>
-    </Router>
+          
+          
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

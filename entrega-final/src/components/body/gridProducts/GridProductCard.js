@@ -1,5 +1,7 @@
 
 import { Link } from 'react-router-dom';
+import {useState, useContext} from 'react';
+import {CartContext} from '../../CartContext/CartContext'
 
 import Img1 from "../../../img/products/01.jpg";
 import Img2 from "../../../img/products/02.jpg";
@@ -10,6 +12,7 @@ import Img6 from "../../../img/products/06.jpg";
 import Img7 from "../../../img/products/07.jpg";
 import Img8 from "../../../img/products/08.jpg";
 import Img9 from "../../../img/products/09.jpg";
+import React from 'react';
 
 const GridProductCard = ({ data }) => {
   const myStylePiture = { width: "224", height: "144" };
@@ -103,9 +106,19 @@ const GridProductCard = ({ data }) => {
     }
   };
 
-  {
-    /* TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
+  
+const  AddProduct=  (idProducto)=> {
+  const [Cart, setCart] = useContext(CartContext)
+  const addmovie = e => {
+    e.preventDefault();
+  setCart(prevCart => [...prevCart, {id:4, description:'Nuevo Producto', price: 2500, count:1, img:'4', total:2500}]);
   }
+
+ console.log("se presiono el boton")
+  } 
+
+
+ // TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
   //const myStyleBody = { position: 'absolute' , left: '0px', top:'0px' };
   //const myStyleBody = { width: "263", high: "308"};
   //console.log(myStyleBody)
@@ -136,12 +149,8 @@ const GridProductCard = ({ data }) => {
           </button>
           <button
             className="btn btn-outline-primary btn-sm"
-            data-toast=""
-            data-toast-type="success"
-            data-toast-position="topRight"
-            data-toast-icon="icon-circle-check"
-            data-toast-title="Product"
-            data-toast-message="Añadido con éxito al carrito!"
+            id={data.product_id}
+            onClick={AddProduct(data.product_id)}
           >
             AGREGAR
           </button>

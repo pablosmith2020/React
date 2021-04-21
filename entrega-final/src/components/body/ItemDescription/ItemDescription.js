@@ -12,26 +12,14 @@ import img3 from "../../../img/reviews/03.jpg";
 const ProductId = 1;
 
  const ItemDescription = ({data}) => {
-  console.log(data)
+  
 
   const [DataCategory, SetCategory] = useState({});
 
   useEffect(() => {
     SetCategory(Categorys);
-
-    
-  }, []);
-
- 
-console.log(Categorys)
-
-
-
-
-
-
-
-
+  }, [data]);
+  
 
   return (
     <div className="container padding-bottom-3x mb-1">
