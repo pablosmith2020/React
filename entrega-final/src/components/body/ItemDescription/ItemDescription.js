@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Categorys } from "../../Product/ProductsGridCard";
 import ItemDescriptionCarrusel from "./ItemDescriptionCarrusel";
@@ -8,18 +7,14 @@ import img1 from "../../../img/reviews/01.jpg";
 import img2 from "../../../img/reviews/02.jpg";
 import img3 from "../../../img/reviews/03.jpg";
 
-
 const ProductId = 1;
 
- const ItemDescription = ({data}) => {
-  
-
+const ItemDescription = ({ data }) => {
   const [DataCategory, SetCategory] = useState({});
 
   useEffect(() => {
     SetCategory(Categorys);
   }, [data]);
-  
 
   return (
     <div className="container padding-bottom-3x mb-1">

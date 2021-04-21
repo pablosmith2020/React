@@ -7,7 +7,10 @@ export const CartProvider = (props) => {
       description: 'Zapatillas Adidas',
       count: 1,
       price: 43.90,
+      discount:25,
       id: 1,
+      colour:'Negro',
+      size:'Medio',
       total:'43.90',
       img:'1'
     },
@@ -15,7 +18,10 @@ export const CartProvider = (props) => {
         description: 'Gorra Deportiva',
         count: 2,
         price: 24.80,
+        discount:0,
         id: 2,
+        colour:'Azul',
+        size:'Grande',
         total:'12,40',
         img:'2'
     },
@@ -23,7 +29,10 @@ export const CartProvider = (props) => {
         description: 'Cartera Ugart',
         count: 1,
         price: 200.09,
+        discount:10,
         id: 3,
+        colour:'Blanca',
+        size:'XXL',
         total:'200.09',
         img:'3'
     },

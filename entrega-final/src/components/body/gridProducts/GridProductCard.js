@@ -1,7 +1,6 @@
-
-import { Link } from 'react-router-dom';
-import {useState, useContext} from 'react';
-import {CartContext} from '../../CartContext/CartContext'
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../CartContext/CartContext";
 
 import Img1 from "../../../img/products/01.jpg";
 import Img2 from "../../../img/products/02.jpg";
@@ -12,7 +11,7 @@ import Img6 from "../../../img/products/06.jpg";
 import Img7 from "../../../img/products/07.jpg";
 import Img8 from "../../../img/products/08.jpg";
 import Img9 from "../../../img/products/09.jpg";
-import React from 'react';
+import React from "react";
 
 const GridProductCard = ({ data }) => {
   const myStylePiture = { width: "224", height: "144" };
@@ -106,19 +105,27 @@ const GridProductCard = ({ data }) => {
     }
   };
 
-  
-const  AddProduct=  (idProducto)=> {
-  const [Cart, setCart] = useContext(CartContext)
-  const addmovie = e => {
-    e.preventDefault();
-  setCart(prevCart => [...prevCart, {id:4, description:'Nuevo Producto', price: 2500, count:1, img:'4', total:2500}]);
-  }
+  const AddProduct = (idProducto) => {
+    const [setCart] = useContext(CartContext);
+    const addproduct = (e) => {
+      e.preventDefault();
+      setCart((prevCart) => [
+        ...prevCart,
+        {
+          id: 4,
+          description: "Nuevo Producto",
+          price: 2500,
+          count: 1,
+          img: "4",
+          total: 2500,
+        },
+      ]);
+    };
 
- console.log("se presiono el boton")
-  } 
+    console.log("se presiono el boton");
+  };
 
-
- // TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
+  // TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
   //const myStyleBody = { position: 'absolute' , left: '0px', top:'0px' };
   //const myStyleBody = { width: "263", high: "308"};
   //console.log(myStyleBody)
@@ -129,10 +136,15 @@ const  AddProduct=  (idProducto)=> {
         <div className="product-badge text-danger">
           {data.discount_rate} Off
         </div>
-        <Link to={`Product/${data.product_id}`} className="product-thumb"></Link>
-          {mySwitchFunctionImg(data.product_id)}
+        <Link
+          to={`Product/${data.product_id}`}
+          className="product-thumb"
+        ></Link>
+        {mySwitchFunctionImg(data.product_id)}
         <h3 className="product-title">
-        <Link to={`Product/${data.product_id}`} className="product-thumb">{data.description}</Link>
+          <Link to={`Product/${data.product_id}`} className="product-thumb">
+            {data.description}
+          </Link>
         </h3>
         <h4 className="product-price">
           <del>{data.price_old}</del>

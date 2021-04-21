@@ -7,7 +7,7 @@ export const MobileMenu = (Visibility) => {
 
   useEffect(() => {}, []);
 
-  console.log("MobileHeader Estilos: " + setStyleMenu);
+  //console.log("MobileHeader Estilos: " + setStyleMenu);
 
   //console.log( myStyleMenu)
   return (

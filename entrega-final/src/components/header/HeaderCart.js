@@ -1,26 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
+import { Link } from "react-router-dom";
 
 import foto1 from "../../img/cart-dropdown/00.jpg";
-import foto2 from "../../img/cart-dropdown/01.jpg";
-import foto3 from "../../img/cart-dropdown/02.jpg";
 
 const HeaderCart = () => {
-  const [Cart, setCart,TotalAmount,CountElementCar] = useContext(CartContext);
+  const [Cart, TotalAmount, CountElementCar] = useContext(CartContext);
 
-  
+  /*  useEffect(() => {}, []); */
 
- /*  useEffect(() => {}, []); */
+  const removeElementCart = (idProduct) => {
+    //console.log("remove Item")
+  };
 
-  const removeElementCart = (idProduct, count) => {};
-
-const AddElement =() =>{}
-
-
-
-  {
- 
-  }
+  const AddElement = () => {
+    //console.log("AddElement ")
+  };
 
   return (
     <div className="cart">
@@ -46,16 +41,21 @@ const AddElement =() =>{}
               <span
                 id={`spanFirst-${Car.id}`}
                 className="dropdown-product-remove"
-                onClick={removeElementCart(Car.id, 1)}
               >
-                <i id={Car.id} className="icon-cross"></i>
+                <i
+                  id={Car.id}
+                  className="icon-cross"
+                  onClick={removeElementCart(Car.id)}
+                >
+                  X
+                </i>
               </span>
               <a
                 id={`aSecond-${Car.id}`}
                 className="dropdown-product-thumb"
                 href="/#"
               >
-                <img id={`img-${Car.id}`} src= {foto1} alt="Imagen Producto" />
+                <img id={`img-${Car.id}`} src={foto1} alt="Imagen Producto" />
               </a>
               <div id={`div-${Car.id}`} className="dropdown-product-info">
                 <a
@@ -83,19 +83,21 @@ const AddElement =() =>{}
           </div>
           <div id="divPrecio" className="column text-right">
             <span id="spanPrecio" className="text-lg text-medium">
-            {TotalAmount}
+              {TotalAmount}
             </span>
           </div>
         </div>
         <div id="BtnHeader" className="toolbar-dropdown-group">
           <div id="divFooter1" className="column">
-            <a
-              id="BtnHeaderCart"
-              className="btn btn-sm btn-block btn-secondary"
-              href="cart.html"
-            >
-              Mi Carrito
-            </a>
+            <Link to="/Cart">
+              <a
+                id="BtnHeaderCart"
+                className="btn btn-sm btn-block btn-secondary"
+                href="cart.html"
+              >
+                Mi Carrito
+              </a>
+            </Link>
           </div>
           <div id="divFooter2" className="column">
             <a

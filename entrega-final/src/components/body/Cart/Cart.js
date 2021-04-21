@@ -1,145 +1,178 @@
-import { render } from "@testing-library/react";
+import Select from "@material-ui/core/Select";
 
+import React, { useContext } from "react";
+import { CartContext } from "../../CartContext/CartContext";
+import { Link } from "react-router-dom";
 
+import foto1 from "../../../img/cart-dropdown/00.jpg";
 
- const Card = () => {
+const Card = () => {
+  const [Cart, TotalAmount] = useContext(CartContext);
 
+  const [state, setState] = React.useState({
+    count: "0",
+    name: "hai",
+  });
+  const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+  };
 
-    return(
+  const removeAllElementCart = () => {
+    //console.log("remove ALL Item")
+  };
 
-<div id="shoppingCart" className="table-responsive shopping-cart">
+  const removeElementCart = () => {};
+
+  return (
+    <div id="shoppingCart" className="table-responsive shopping-cart">
       <table id="root" className="table">
         <thead id="thead1">
-            <tr id="tr1">
-                <th id="th1">Producto</th>
-                <th className="text-center" id="th-header1">Cantidad</th>
-                <th className="text-center" id="th-header2">Sub Total</th>
-                <th className="text-center" id="th-header3">Descuento</th>
-                <th className="text-center" id="th-header4">
-                    <a className="btn btn-sm btn-outline-danger" href="#" onclick="removeAllElementCart()">Eliminar Productos</a>
-                </th>
-            </tr>
+          <tr id="tr1">
+            <th id="th1">Producto</th>
+            <th className="text-center" id="th-header1">
+              Cantidad
+            </th>
+            <th className="text-center" id="th-header2">
+              Sub Total
+            </th>
+            <th className="text-center" id="th-header3">
+              Descuento
+            </th>
+            <th className="text-center" id="th-header4">
+              <a
+                className="btn btn-sm btn-outline-danger"
+                href=">/#"
+                onClick={removeAllElementCart()}
+              >
+                Eliminar Productos
+              </a>
+            </th>
+          </tr>
         </thead>
         <tbody id="tbody">
-            <tr id="tr-1205">
-                <td id="td-1205">
-                    <div id="divProduct-1205" className="product-item">
-                        <a id="a-1205" className="product-thumb" href="/#">
-                            <img id="img-1205" src="img/cart-dropdown/00.jpg" alt="Imagen"></img>
+          {Cart?.map((Car) => {
+            //console.log(Car.colour)
+            return (
+              <tr id={`tr-${Car.id}`} key={`tr-${Car.id}`}>
+                <td id={`td-${Car.id}`}>
+                  <div id={`divProduct-${Car.id}`} className="product-item">
+                    <a id={`a-${Car.id}`} className="product-thumb" href="/#">
+                      <img id={`img-${Car.id}`} src={foto1} alt="Imagen"></img>
+                    </a>
+                    <div id={`divProduct2-${Car.id}`} className="product-info">
+                      <h4 id={`h4-${Car.id}`} className="product-title">
+                        <a id={`a2-${Car.id}`} href="/#">
+                          {Car.description}
                         </a>
-                        <div id="divProduct2-1205" className="product-info">
-                        <h4 id="h4-1205" className="product-title">
-                            <a id="a2-1205" href="/#">Zapatilla Adidas</a>
-                        </h4>
-                        <span id="span1-1205">
-                            <em id="em1-1205">Tamaño: Gris Oscuro</em>
-                        </span>
-                        <span id="span2-1205">
-                            <em id="em-1205">Color: Mediano</em>
-                        </span>
+                      </h4>
+                      <span id={`span1-${Car.id}`}>
+                        <em id={`em1-${Car.id}`}>{`Tamaño: ${Car.size}`} </em>
+                      </span>
+                      <span id={`span2-${Car.id}`}>
+                        <em id={`em-${Car.id}`}>{`Color: ${Car.colour}`}</em>
+                      </span>
                     </div>
-                    </div>
+                  </div>
                 </td>
-                <td id="td2-1205" className="text-center">
-                    <div id="div2-1205" className="count-input">
-                        <select id="slect-1205" className="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
+                <td id={`td2-${Car.id}`} className="text-center">
+                  <div id={`div2-${Car.id}`} className="count-input">
+                    <Select
+                      className="form-control"
+                      native
+                      value={Car.count}
+                      onChange={handleChange}
+                      inputProps={{
+                        name: "count",
+                        id: "countProduct",
+                      }}
+                    >
+                      <option aria-label="None" value="" />
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                      <option value={4}>4</option>
+                      <option value={5}>5</option>
+                    </Select>
+                  </div>
                 </td>
-                <td id="td3-1205" className="text-center text-lg text-medium">43.90</td>
-                <td id="td4-1205" className="text-center text-lg text-medium">0</td>
-                <td id="td5-1205" className="text-center">
-                    <a id="a3-1205" className="remove-from-cart" href="/#" data-toggle="tooltip" title="" data-original-title="Eliminar">
-                        <i id="i2-1205" className="icon-cross" onclick="removeElementCart(0,1205)"></i>
-                    </a>
+                <td
+                  id={`td3-${Car.id}`}
+                  className="text-center text-lg text-medium"
+                >
+                  {" "}
+                  $ {Car.price}
                 </td>
-            </tr>
-            <tr id="tr-1405"><td id="td-1405">
-                <div id="divProduct-1405" className="product-item">
-                    <a id="a-1405" className="product-thumb" href="/#">
-                        <img id="img-1405" src="img/cart-dropdown/01.jpg" alt="Imagen"></img>
-                    </a>
-                <div id="divProduct2-1405" className="product-info">
-                    <h4 id="h4-1405" className="product-title">
-                        <a id="a2-1405" href="/#">Gorra Deportiva</a>
-                    </h4>
-                <span id="span1-1405">
-                    <em id="em1-1405">Tamaño: Negra</em>
-                </span>
-                <span id="span2-1405">
-                    <em id="em-1405">Color: Grande</em>
-                </span>
-            </div>
-            </div>
+                <td
+                  id={`td4-${Car.id}`}
+                  className="text-center text-lg text-medium"
+                >
+                  {Car.discount} %
                 </td>
-                    <td id="td2-1405" className="text-center">
-                        <div id="div2-1405" className="count-input">
-                            <select id="slect-1405" className="form-control">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                    </td>
-                <td id="td3-1405" className="text-center text-lg text-medium">24.89</td>
-                <td id="td4-1405" className="text-center text-lg text-medium">0</td>
-                <td id="td5-1405" className="text-center">
-                    <a id="a3-1405" className="remove-from-cart" href="/#" data-toggle="tooltip" title="" data-original-title="Eliminar">
-                        <i id="i2-1405" className="icon-cross" onclick="removeElementCart(1,1405)"></i>
-                    </a>
+                <td id={`td5-${Car.id}`} className="text-center">
+                  <a
+                    id={`a3-${Car.id}`}
+                    className="remove-from-cart"
+                    href="/#"
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="Eliminar"
+                  >
+                    <i
+                      id={`i2-${Car.id}`}
+                      className="icon-cross"
+                      onClick={removeElementCart(Car.id)}
+                    >
+                      X
+                    </i>
+                  </a>
                 </td>
-            </tr>
-            <tr id="tr-8805">
-                <td id="td-8805">
-                    <div id="divProduct-8805" className="product-item">
-                        <a id="a-8805" className="product-thumb" href="/#">
-                            <img id="img-8805" src="img/cart-dropdown/02.jpg" alt="Imagen"></img>
-                        </a>
-                        <div id="divProduct2-8805" className="product-info">    
-                            <h4 id="h4-8805" className="product-title"> 
-                                <a id="a2-8805" href="/#l">Cartera Ugart</a>
-                            </h4>
-                            <span id="span1-8805">
-                                <em id="em1-8805">Tamaño: Verde</em>
-                            </span>
-                            <span id="span2-8805">
-                                <em id="em-8805">Color: Extra Grande</em>
-                            </span>
-                        </div>
-                    </div>
-                </td>
-                <td id="td2-8805" className="text-center">
-                    <div id="div2-8805" className="count-input">
-                        <select id="slect-8805" className="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </td>
-                <td id="td3-8805" className="text-center text-lg text-medium">200.09</td>
-                <td id="td4-8805" className="text-center text-lg text-medium">0</td>
-                <td id="td5-8805" className="text-center">
-                    <a id="a3-8805" className="remove-from-cart" href="/#" data-toggle="tooltip" title="" data-original-title="Eliminar">
-                        <i id="i2-8805" className="icon-cross" onclick="removeElementCart(2,8805)"></i>
-                    </a>
-                </td>
-            </tr>
+              </tr>
+            );
+          })}
         </tbody>
-    </table>
-</div> 
+      </table>
 
+      <div className="shopping-cart-footer">
+        <div className="column">
+          <form className="coupon-form" method="post">
+            <input
+              className="form-control form-control-sm"
+              type="text"
+              placeholder="Numero de Cupon"
+              required=""
+            ></input>
+            <button className="btn btn-outline-primary btn-sm" type="submit">
+              Aplicar Cupon
+            </button>
+          </form>
+        </div>
+        <div className="column text-lg">
+          Subtotal:{" "}
+          <span id="spanTotalAmount" className="text-medium">
+            {TotalAmount}
+          </span>
+        </div>
+      </div>
 
-
-    )
+      <div className="shopping-cart-footer">
+        <div className="column">
+          <a className="btn btn-outline-secondary shop-grid-ls.html" href="/#">
+            <Link to="/">
+              <i className="icon-arrow-left"></i>&nbsp;Ir a la Tienda
+            </Link>
+          </a>
+        </div>
+        <div className="column">
+          <a className="btn btn-success" href="/#">
+            Comprar
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 };
-export default ItemDescription;
+export default Card;

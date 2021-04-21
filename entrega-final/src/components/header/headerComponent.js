@@ -15,7 +15,6 @@ export const Header = () => {
 
   const handleMenuMobile = () => {
     setFlag(!flag);
-
   };
 
   return (
@@ -356,11 +355,13 @@ export const Header = () => {
               className="offcanvas-toggle menu-toggle"
               href="#mobile-menu"
               data-toggle="offcanvas"
-            ></a>
-            <Link to='/' className="site-logo">
-            {/* <a className="site-logo" href="index.html"> */}
-              <img src={logo} alt="Logo" /></Link>
-            
+            >
+              =
+            </a>
+            <Link to="/" className="site-logo">
+              {/* <a className="site-logo" href="/#"> */}
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
         </div>
         <nav className="site-menu">
@@ -371,9 +372,8 @@ export const Header = () => {
               </a>
               <ul className="sub-menu">
                 <li>
-             {/*      <a href="shop-categories.html">Buscador Productos</a> */}
+                  {/*      <a href="shop-categories.html">Buscador Productos</a> */}
                   <Link to="/GridProduct">Buscador Productos</Link>
-                  
                 </li>
                 <li className="has-children">
                   <a href="shop-grid-ls.html">

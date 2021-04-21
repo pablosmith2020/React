@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
@@ -34,10 +34,9 @@ const data = [
 const ItemDescriptionCarrusel = (ProductId) => {
   const [images, setImages] = React.useState(ProductId);
 
-  
   useEffect(() => {
     setImages(Array.from(data));
-   }, []);
+  }, []);
 
   return images ? (
     <ImageGallery

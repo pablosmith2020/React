@@ -10,6 +10,7 @@ import Footer from "./Views/footer/viewFooter";
 import Header from "./Views/header/viewHeader";
 import Product from './Views/body/viewProduct';
 import gridProducts from './Views/body/viewGridProducts';
+import CartPage from './Views/body/viewCard'
 import {CartProvider} from './components/CartContext/CartContext'
 
 
@@ -26,6 +27,8 @@ function App() {
             <Route path='/' exact component={Home}/>
             <Route path='/GridProduct' exact  component={gridProducts}/>
             <Route path='/Product/:id' component={Product}/>
+            <Route path='/Cart' component={CartPage}/>
+            
           
           
           
