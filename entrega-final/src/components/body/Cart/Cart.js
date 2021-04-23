@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import foto1 from "../../../img/cart-dropdown/00.jpg";
 
 const Card = () => {
-  const {Cart, setCart,TotalAmount,CountElementCar} = useContext(CartContext);
+  const { Cart, TotalAmount, DeleteProdcuct, DeleteAllProdcuct } = useContext(
+    CartContext
+  );
 
   const [state, setState] = React.useState({
     count: "0",
@@ -20,12 +22,6 @@ const Card = () => {
       [name]: event.target.value,
     });
   };
-
-  const removeAllElementCart = () => {
-    //console.log("remove ALL Item")
-  };
-
-  const removeElementCart = () => {};
 
   return (
     <div id="shoppingCart" className="table-responsive shopping-cart">
@@ -45,8 +41,8 @@ const Card = () => {
             <th className="text-center" id="th-header4">
               <a
                 className="btn btn-sm btn-outline-danger"
-                href=">/#"
-                onClick={removeAllElementCart()}
+                href="#"
+                onClick={() => DeleteAllProdcuct()}
               >
                 Eliminar Productos
               </a>
@@ -113,18 +109,11 @@ const Card = () => {
                   {Car.discount} %
                 </td>
                 <td id={`td5-${Car.id}`} className="text-center">
-                  <a
-                    id={`a3-${Car.id}`}
-                    className="remove-from-cart"
-                    href="/#"
-                    data-toggle="tooltip"
-                    title=""
-                    data-original-title="Eliminar"
-                  >
+                  <a id={`a3-${Car.id}`} className="remove-from-cart" href="#">
                     <i
                       id={`i2-${Car.id}`}
                       className="icon-cross"
-                      onClick={() => removeElementCart(Car.id)}
+                      onClick={() => DeleteProdcuct(Car.id)}
                     >
                       X
                     </i>

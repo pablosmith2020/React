@@ -5,22 +5,7 @@ import { Link } from "react-router-dom";
 import foto1 from "../../img/cart-dropdown/00.jpg";
 
 const HeaderCart = () => {
-  const {Cart, setCart,TotalAmount,CountElementCar} = useContext(CartContext);
-
-
-  //console.log("estoy en HeadersCart:    " + CountElementCar)
-  
-  /*  useEffect(() => {}, []); */
-
-  const removeElementCart = (idProduct) => {
-    console.log("remove Item")
-  };
-
-  const AddElement = () => {
-    //console.log("AddElement ")
-  };
-
-
+  const { Cart, TotalAmount, DeleteProdcuct } = useContext(CartContext);
 
   return (
     <div className="cart">
@@ -29,7 +14,7 @@ const HeaderCart = () => {
       </a>
       <i className="icon-bag"></i>
       <span id="CountProductCart" className="count">
-        {CountElementCar}
+        {Cart.length}
       </span>
       <span id="TotalPurchaseCart" className="subtotal">
         {TotalAmount}
@@ -50,7 +35,7 @@ const HeaderCart = () => {
                 <i
                   id={Car.id}
                   className="icon-cross"
-                  onClick={() => removeElementCart(Car.id)}
+                  onClick={() => DeleteProdcuct(Car.id)}
                 >
                   X
                 </i>

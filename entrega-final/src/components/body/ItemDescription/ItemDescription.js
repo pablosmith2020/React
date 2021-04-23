@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Categorys } from "../../Product/ProductsGridCard";
+import React, { useContext } from "react";
+import { CartContext } from "../../CartContext/CartContext";
 import ItemDescriptionCarrusel from "./ItemDescriptionCarrusel";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
@@ -10,29 +10,7 @@ import img3 from "../../../img/reviews/03.jpg";
 const ProductId = 1;
 
 const ItemDescription = ({ data }) => {
-  const [DataCategory, SetCategory] = useState({});
-
-  useEffect(() => {
-    SetCategory(Categorys);
-  }, [data]);
-
-
-
-
-  const AddProduct = (idProducto) => {
-    
-    
-    const addproduct = (e) => {
-      
-  
-};
-//console.log(Cart.data)
-
-};
-
-
-
-
+  const { AddProduct } = useContext(CartContext);
 
   return (
     <div className="container padding-bottom-3x mb-1">

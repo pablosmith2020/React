@@ -11,12 +11,6 @@ const WidgetBrandFilter = () => {
     SetDataCategory(Categorys);
   }, []);
 
-  const ItemPromise = new Promise((data, error) => {
-    setTimeout(() => {
-      data(Categorys);
-    }, 2000);
-  });
-
   const useStyles = makeStyles({
     root: {
       "&:hover": {
@@ -64,7 +58,6 @@ const WidgetBrandFilter = () => {
     },
   });
 
-  // Inspired by blueprintjs
   function StyledCheckbox(props) {
     const classes = useStyles();
 
