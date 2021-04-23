@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import foto1 from "../../../img/cart-dropdown/00.jpg";
 
 const Card = () => {
-  const [Cart, TotalAmount] = useContext(CartContext);
+  const {Cart, setCart,TotalAmount,CountElementCar} = useContext(CartContext);
 
   const [state, setState] = React.useState({
     count: "0",
@@ -124,7 +124,7 @@ const Card = () => {
                     <i
                       id={`i2-${Car.id}`}
                       className="icon-cross"
-                      onClick={removeElementCart(Car.id)}
+                      onClick={() => removeElementCart(Car.id)}
                     >
                       X
                     </i>

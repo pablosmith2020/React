@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const myStyleBody = { overflow: "visible" };
 
 export const MobileMenu = (Visibility) => {
-  const [myStyleMenu, setStyleMenu] = useState({ visibility: "hidden" });
+  const [myStyleMenu] = useState({ visibility: "hidden" });
 
   useEffect(() => {}, []);
 

@@ -1,7 +1,10 @@
 import React, { useState, createContext, useEffect } from 'react';
 
 export const CartContext = createContext();
-export const CartProvider = (props) => {
+
+export const CartProvider = props => {
+ 
+let suma=0 
   const [Cart, setCart] = useState([
     {
       description: 'Zapatillas Adidas',
@@ -38,18 +41,25 @@ export const CartProvider = (props) => {
     },
   ]);
 
-let suma=0
-const [CountElementCar, SetCountElementCar]= useState(Cart.length)
-const [TotalAmount, setTotalAmount ] = useState(0)
+const [CountElementCar, SetCountElementCar]= useState(0)
+const [TotalAmount, SetTotalAmount ] = useState(0)
 
+
+/* const sumar =() =>{
 Cart?.map((Car) =>{
     suma+= Car.price;  
 })
+}
+
+ */
+
   useEffect(() => {
-    setTotalAmount(suma)
+    SetTotalAmount(suma)
+    SetCountElementCar(Cart.length)
+    console.log("Cargue Context")
   }, []);
 
-
+//console.log("estoy en context:" + CountElementCar)
   const AddProdcut = (idProduct) => {
 
   };
@@ -61,7 +71,7 @@ Cart?.map((Car) =>{
 };
 
   return (
-    <CartContext.Provider value={[Cart, setCart,TotalAmount,CountElementCar]} >
+    <CartContext.Provider value={{Cart, setCart,TotalAmount,CountElementCar}}  >
       {props.children}
     </CartContext.Provider>
   );

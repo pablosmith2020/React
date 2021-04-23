@@ -5,7 +5,7 @@ export const Categorys = [
     price: "$ 4990",
     brand_id: "1",
     category_id:"1",
-    brand_description: "Zapatos",
+    brand_description: "Adidas",
     imgs: {
       img1: "/01.jpg",
       img2: "img/shop/categories/02.jpg",
@@ -20,7 +20,7 @@ export const Categorys = [
     price: "$ 5625",
     brand_id: "2",
     category_id:"2",
-    brand_description: "Zapatos",
+    brand_description: "Calvin Klein",
     imgs: {
       img1: "img/shop/categories/04.jpg",
       img2: "img/shop/categories/05.jpg",
@@ -35,7 +35,7 @@ export const Categorys = [
     price: "$ 27.99",
     brand_id: "3",
     category_id:"3",
-    brand_description: "Zapatos",
+    brand_description: "Bilabong ",
     imgs: {
       img1: "img/shop/categories/07.jpg",
       img2: "img/shop/categories/08.jpg",

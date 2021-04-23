@@ -16,6 +16,24 @@ const ItemDescription = ({ data }) => {
     SetCategory(Categorys);
   }, [data]);
 
+
+
+
+  const AddProduct = (idProducto) => {
+    
+    
+    const addproduct = (e) => {
+      
+  
+};
+//console.log(Cart.data)
+
+};
+
+
+
+
+
   return (
     <div className="container padding-bottom-3x mb-1">
       <div className="row">
@@ -182,8 +200,9 @@ const ItemDescription = ({ data }) => {
                   data-toast-icon="icon-circle-check"
                   data-toast-title="Product"
                   data-toast-message="Añadido con éxito al carrito!"
+                  onClick={() => AddProduct(data.product_id)}
                 >
-                  <i className="icon-bag"></i>Comprar
+                  <i className="icon-bag"></i>Agregar Carrito
                 </button>
               </div>
             </div>

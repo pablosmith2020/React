@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useState , useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 
 import Img1 from "../../../img/products/01.jpg";
@@ -12,9 +12,10 @@ import Img7 from "../../../img/products/07.jpg";
 import Img8 from "../../../img/products/08.jpg";
 import Img9 from "../../../img/products/09.jpg";
 import React from "react";
-
+ 
 const GridProductCard = ({ data }) => {
   const myStylePiture = { width: "224", height: "144" };
+  const { Cart,setCart, CountElementCar} = useContext(CartContext);
 
   const mySwitchFunctionImg = (param) => {
     switch (param) {
@@ -105,24 +106,35 @@ const GridProductCard = ({ data }) => {
     }
   };
 
-  const AddProduct = (idProducto) => {
-    const [setCart] = useContext(CartContext);
-    const addproduct = (e) => {
-      e.preventDefault();
-      setCart((prevCart) => [
-        ...prevCart,
-        {
-          id: 4,
-          description: "Nuevo Producto",
-          price: 2500,
-          count: 1,
-          img: "4",
-          total: 2500,
-        },
-      ]);
-    };
 
-    console.log("se presiono el boton");
+
+  //console.log("estoy en GridProdcutCard:    " + Cart.data)
+
+console.log(CountElementCar)
+
+const product1= {
+  id: 4,
+  description: "Nuevo Producto",
+  price: 2500,
+  count: 5,
+  img: "4",
+  total: 2500,
+colour:'Negro Nuevo Item',
+ size:'Medio Nuevo Item',
+ total:'2500',
+ img:'1'
+}
+
+
+  const AddProduct = (idProducto) => {
+     
+    setCart([
+      ...Cart, product1  ] 
+      
+    );
+console.log(idProducto)
+    
+    //console.log("se presiono el boton");
   };
 
   // TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
@@ -162,7 +174,7 @@ const GridProductCard = ({ data }) => {
           <button
             className="btn btn-outline-primary btn-sm"
             id={data.product_id}
-            onClick={AddProduct(data.product_id)}
+            onClick={() => AddProduct(data.product_id)}  
           >
             AGREGAR
           </button>
