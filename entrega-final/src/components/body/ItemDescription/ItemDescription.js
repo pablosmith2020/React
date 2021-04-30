@@ -3,6 +3,8 @@ import { CartContext } from "../../CartContext/CartContext";
 import ItemDescriptionCarrusel from "./ItemDescriptionCarrusel";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
+import Rating from "@material-ui/lab/Rating";
+import { makeStyles } from "@material-ui/core/styles";
 import img1 from "../../../img/reviews/01.jpg";
 import img2 from "../../../img/reviews/02.jpg";
 import img3 from "../../../img/reviews/03.jpg";
@@ -11,6 +13,18 @@ const ProductId = 1;
 
 const ItemDescription = ({ data }) => {
   const { AddProduct } = useContext(CartContext);
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: "flex",
+      flexDirection: "column",
+      "& > * + *": {
+        marginTop: theme.spacing(1),
+      },
+    },
+  }));
+
+  const classes = useStyles();
 
   return (
     <div className="container padding-bottom-3x mb-1">
@@ -31,13 +45,10 @@ const ItemDescription = ({ data }) => {
         {/*<!-- Product Info--> */}
         <div className="col-md-6">
           <div className="padding-top-2x mt-2 hidden-md-up"></div>
-          <div className="rating-stars">
-            <i className="icon-star filled"></i>
-            <i className="icon-star filled"></i>
-            <i className="icon-star filled"></i>
-            <i className="icon-star filled"></i>
-            <i className="icon-star"></i>
+          <div className={classes.root}>
+            <Rating name="half-rating" defaultValue={2} precision={1} />
           </div>
+
           <span className="text-muted align-middle">
             &nbsp;&nbsp;4.2 | 3 Opiniones de los usuarios
           </span>
@@ -253,12 +264,13 @@ const ItemDescription = ({ data }) => {
                       Calidad media por el precio
                     </h4>
                     <div className="mb-2">
-                      <div className="rating-stars">
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star"></i>
-                        <i className="icon-star"></i>
+                      <div className={classes.root}>
+                        <Rating
+                          name="half-rating-read"
+                          defaultValue={4}
+                          precision={1}
+                          readOnly
+                        />
                       </div>
                     </div>
                   </div>
@@ -287,12 +299,13 @@ const ItemDescription = ({ data }) => {
                       Mi esposo ama a su nuevo ...
                     </h4>
                     <div className="mb-2">
-                      <div className="rating-stars">
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
+                      <div className={classes.root}>
+                        <Rating
+                          name="half-rating-read"
+                          defaultValue={1}
+                          precision={1}
+                          readOnly
+                        />
                       </div>
                     </div>
                   </div>
@@ -319,12 +332,13 @@ const ItemDescription = ({ data }) => {
                       Suave, cómoda, bastante duradera ...
                     </h4>
                     <div className="mb-2">
-                      <div className="rating-stars">
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star filled"></i>
-                        <i className="icon-star"></i>
+                      <div className={classes.root}>
+                        <Rating
+                          name="half-rating-read"
+                          defaultValue={3}
+                          precision={1}
+                          readOnly
+                        />
                       </div>
                     </div>
                   </div>

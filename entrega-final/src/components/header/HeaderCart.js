@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import foto1 from "../../img/cart-dropdown/00.jpg";
 
 const HeaderCart = () => {
@@ -12,7 +13,9 @@ const HeaderCart = () => {
       <a id="BtnHeaderCart" href="cart.html">
         {" "}
       </a>
-      <i className="icon-bag"></i>
+      <i>
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </i>
       <span id="CountProductCart" className="count">
         {Cart.length}
       </span>
@@ -34,12 +37,8 @@ const HeaderCart = () => {
                   id={`spanFirst-${Car.id}`}
                   className="dropdown-product-remove"
                 >
-                  <i
-                    id={Car.id}
-                    className="icon-cross"
-                    onClick={() => DeleteProdcuct(Car.id)}
-                  >
-                    X
+                  <i id={Car.id} onClick={() => DeleteProdcuct(Car.id)}>
+                    <FontAwesomeIcon icon={faTrashAlt} />
                   </i>
                 </span>
                 <a

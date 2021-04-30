@@ -17,7 +17,7 @@ const GridProductsComponent = () => {
   return (
     <div className="col-xl-9 col-lg-8 order-lg-2">
       {/*       <!-- Shop Toolbar--> */}
-      <div className="shop-toolbar paddingBottom-1x mb-2">
+      {/* <div className="shop-toolbar paddingBottom-1x mb-2">
         <div className="column">
           <div className="shop-sorting">
             <label>Ordenar por:</label>
@@ -35,18 +35,9 @@ const GridProductsComponent = () => {
         </div>
         <div className="column">
           <div className="shop-view">
-            {/*   <a className="grid-view active" href="/#">
-                        <span></span>
-                        <span></span>
-                        <span></span></a>
-                        <a className="list-view" href="shop-list-ls.html">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                     </a> */}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <!-- Products Grid--> */}
 
@@ -64,6 +55,8 @@ const GridProductsComponent = () => {
           return <GridProductCard data={Category} key={Category.product_id} />;
         })}
       </div>
+
+      
       <WidgetGridProductPagination />
     </div>
   );

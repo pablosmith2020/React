@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import flagImage from "../../img/flags/AR.png";
-import Background1 from "../../img/banners/02.jpg";
-import Background2 from "../../img/banners/03.jpg";
-import logo from "../../img/logo/logo.png";
-import MobileMenu from "./MobileMenu";
-import HeaderCart from "./HeaderCart";
+import MenuComponent from "./MenuComponent";
+import SearchProductComponent from "./SearchProduct";
+import { HeaderContext } from "../HeaderContext/HeaderContext";
+import React, { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDownload,
+  faBell,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 const myStyleBody = { overflow: "visible" };
 
 export const Header = () => {
-  const [flag, setFlag] = useState(false);
-
-  const handleMenuMobile = () => {
-    setFlag(!flag);
-  };
+  const { viewMenu } = useContext(HeaderContext);
 
   return (
     <div id="index" className="hasScrollbar" style={myStyleBody}>
@@ -257,10 +256,16 @@ export const Header = () => {
       <div className="topbar">
         <div className="topbar-column">
           <a className="hidden-md-down" href="mailto:support@unishop.com">
-            <i className="icon-mail"></i>&nbsp; support@unishop.com
+            <i>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </i>
+            &nbsp; support@unishop.com
           </a>
           <a className="hidden-md-down" href="tel:+541145699874">
-            <i className="icon-bell"></i>&nbsp; +54 011 4569-9874
+            <i>
+              <FontAwesomeIcon icon={faBell} />
+            </i>
+            &nbsp; +54 011 4569-9874
           </a>
           <a
             className="social-button sb-facebook shape-none sb-dark"
@@ -294,7 +299,10 @@ export const Header = () => {
 
         <div className="topbar-column">
           <a className="hidden-md-down" href="/#">
-            <i className="icon-download"></i>Descargue la APP
+            <i>
+              <FontAwesomeIcon icon={faDownload} />
+            </i>{" "}
+            Descargue la APP
           </a>
 
           <div className="lang-currency-switcher-wrap">
@@ -302,14 +310,18 @@ export const Header = () => {
               <span className="language">
                 <img src={flagImage} alt="Argentina" />
               </span>
-              <span className="currency">$</span>
+              <span className="currency">$ PESOS</span>
             </div>
 
             <div className="dropdown-menu">
               <div className="currency-select">
+
                 <select className="form-control form-control-rounded form-control-sm">
                   <option value="$">PESOS</option>
+            
                 </select>
+
+
               </div>
               <a className="dropdown-item" href="/#">
                 <img src={flagImage} alt="Argentina" />
@@ -324,253 +336,7 @@ export const Header = () => {
       </div>
 
       <header className="navbar navbar-sticky">
-        <form className="site-search" method="get">
-          <input
-            type="  text"
-            name="site_search"
-            placeholder="Ingrese Producto a Buscar..."
-          />
-          <div className="search-tools">
-            <span className="clear-search">Limpiar</span>
-            <span className="close-search">
-              <i className="icon-cross"></i>
-            </span>
-          </div>
-        </form>
-
-        <div className="site-branding">
-          <div className="inner">
-            <div
-              id="ButtonBurger"
-              className="offcanvas-toggle cats-toggle"
-              onClick={handleMenuMobile}
-              data-toggle="offcanvas"
-            >
-              {" "}
-            </div>
-
-            {/* PMS aca debo invocar al componentecMobileMenu.js*/}
-            {flag === true && <MobileMenu visibility={flag} />}
-            <a
-              className="offcanvas-toggle menu-toggle"
-              href="#mobile-menu"
-              data-toggle="offcanvas"
-            >
-              =
-            </a>
-            <Link to="/" className="site-logo">
-              {/* <a className="site-logo" href="/#"> */}
-              <img src={logo} alt="Logo" />
-            </Link>
-          </div>
-        </div>
-        <nav className="site-menu">
-          <ul>
-            <li>
-              <a href="/#">
-                <span>Shop</span>
-              </a>
-              <ul className="sub-menu">
-                <li>
-                  {/*      <a href="shop-categories.html">Buscador Productos</a> */}
-                  <Link to="/GridProduct">Buscador Productos</Link>
-                </li>
-                <li className="has-children">
-                  <a href="shop-grid-ls.html">
-                    <span>Ver en Grilla</span>
-                  </a>
-                </li>
-                <li className="has-children">
-                  <a href="shop-list-ls.html">
-                    <span>Ver en Lista</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="cart.html">Ver Carrito</a>
-                </li>
-                <li className="has-children">
-                  <a href="checkout-address.html">
-                    <span>Checkout</span>
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="checkout-address.html">Direccion</a>
-                    </li>
-                    <li>
-                      <a href="checkout-shipping.html">Envio</a>
-                    </li>
-                    <li>
-                      <a href="checkout-payment.html">Pago</a>
-                    </li>
-                    <li>
-                      <a href="checkout-review.html">Vista previa</a>
-                    </li>
-                    <li>
-                      <a href="checkout-complete.html">Completar</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li className="has-megamenu">
-              <a href="/#">
-                <span>Destacado</span>
-              </a>
-              <ul className="mega-menu">
-                <li>
-                  <span className="mega-menu-title">Top Categories</span>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="/#">Zapatos de Hombre</a>
-                    </li>
-                    <li>
-                      <a href="/#">Zapatos de Mujer</a>
-                    </li>
-                    <li>
-                      <a href="/#">Remeras</a>
-                    </li>
-                    <li>
-                      <a href="/#">Trajes de baño</a>
-                    </li>
-                    <li>
-                      <a href="/#">Shorts / Pantalones</a>
-                    </li>
-                    <li>
-                      <a href="/#">Accesorios</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <span className="mega-menu-title">Tienda Especial</span>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="/#">Niños</a>
-                    </li>
-                    <li>
-                      <a href="/#">Ropa de Natacion</a>
-                    </li>
-                    <li>
-                      <a href="/#">Ropa Deportiva</a>
-                    </li>
-                    <li>
-                      <a href="/#">Ropa Outdoor</a>
-                    </li>
-                    <li>
-                      <a href="/#">Ropa Formal</a>
-                    </li>
-                    <li>
-                      <a href="/#">Accesorios</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <section
-                    className="promo-box"
-                    style={{ background: `url(${Background1})` }}
-                  >
-                    <li>
-                      <span
-                        className="overlay-dark"
-                        styles="opacity: .4;"
-                      ></span>
-                      <div className="promo-box-content text-center padding-top-2x padding-bottom-2x">
-                        <h4 className="text-light text-thin text-shadow">
-                          Nueva Coleccion
-                        </h4>
-                        <h3 className="text-bold text-light text-shadow">
-                          Lentes de Sol
-                        </h3>
-                        <a className="btn btn-sm btn-primary" href="/#">
-                          Shop Now
-                        </a>
-                      </div>
-                    </li>
-                  </section>
-                </li>
-                <li>
-                  <section
-                    className="promo-box"
-                    style={{ background: `url(${Background2})` }}
-                  >
-                    <span className="overlay-dark"></span>
-                    <div className="promo-box-content text-center padding-top-2x padding-bottom-2x">
-                      <h3 className="text-bold text-light text-shadow">
-                        Ofertas Limitadas
-                      </h3>
-                      <h4 className="text-light text-thin text-shadow">
-                        Ahorra hasta el 50%!
-                      </h4>
-                      <a className="btn btn-sm btn-primary" href="/#">
-                        Learn More
-                      </a>
-                    </div>
-                  </section>
-                </li>
-              </ul>
-            </li>
-
-            <li id="liAccountMenuCenter">
-              <a id="btnMyAccount" href="account-login.html">
-                <span>Mi Cuenta</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="toolbar">
-          <div className="inner">
-            <div className="tools">
-              <div className="search">
-                <i className="icon-search"></i>
-              </div>
-              <div id="ImgAccount" className="account">
-                <a href="/#"> </a>
-                <ul
-                  id="MenuAccount"
-                  className="toolbar-dropdown"
-                  style={{ display: "none" }}
-                >
-                  <li className="sub-menu-user">
-                    <div id="divMenuAccount" className="user-info">
-                      <h6 id="nameUser" className="user-name">
-                        {" "}
-                      </h6>
-                      <span
-                        id="rewardPoint"
-                        className="text-xs text-muted"
-                      ></span>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="account-address.html#/MyProfile">Mi Cuenta</a>
-                  </li>
-                  <li>
-                    <a href="account-address.html#/MyOrders">
-                      Lista de Pedidos
-                    </a>
-                  </li>
-                  <li>
-                    <a href="account-address.html#/MyWishlist">Favoritos</a>
-                  </li>
-                  <li className="sub-menu-separator"></li>
-                  <li>
-                    <a id="BtnLogout" href="/#">
-                      <i className="icon-unlock"></i>Logout
-                    </a>
-                  </li>
-                </ul>
-                <a href="account-login.html"> </a>
-                <i
-                  href="/account-login.html"
-                  className="icon-head"
-                  id="IconAccountHeader"
-                ></i>
-              </div>
-
-              <HeaderCart />
-            </div>
-          </div>
-        </div>
+        {viewMenu ? <MenuComponent /> : <SearchProductComponent />}
       </header>
     </div>
   );

@@ -12,17 +12,21 @@ import Product from './Views/body/viewProduct';
 import gridProducts from './Views/body/viewGridProducts';
 import CartPage from './Views/body/viewCard'
 import {CartProvider} from './components/CartContext/CartContext'
+import {BrandProvider} from './components/BrandContext/BrandContext'
+
+import {HeaderProvider} from './components/HeaderContext/HeaderContext'
 
 
 
 function App() {
   return (
     <CartProvider >
+    <BrandProvider >
       <Router>
         <div className="offcanvas-wrapper">
-        
+        <HeaderProvider >
           <Header />
-
+        </HeaderProvider >
           <Switch>
             <Route path='/' exact component={Home}/>
             <Route path='/GridProduct' exact  component={gridProducts}/>
@@ -36,6 +40,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </BrandProvider>
     </CartProvider>
   );
 }

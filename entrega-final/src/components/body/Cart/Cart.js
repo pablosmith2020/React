@@ -4,7 +4,8 @@ import React, { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import { Link } from "react-router-dom";
 import CartEmpty from "../../../img/CartEmpty.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import foto1 from "../../../img/cart-dropdown/00.jpg";
 
 const Card = () => {
@@ -56,7 +57,7 @@ const Card = () => {
                 <th className="text-center" id="th-header4">
                   <a
                     className="btn btn-sm btn-outline-danger"
-                    href="#"
+                    href="/#"
                     onClick={() => DeleteAllProdcuct()}
                   >
                     Eliminar Productos
@@ -142,14 +143,13 @@ const Card = () => {
                       <a
                         id={`a3-${Car.id}`}
                         className="remove-from-cart"
-                        href="#"
+                        href="#/"
                       >
                         <i
                           id={`i2-${Car.id}`}
-                          className="icon-cross"
                           onClick={() => DeleteProdcuct(Car.id)}
                         >
-                          X
+                          <FontAwesomeIcon icon={faTrashAlt} />
                         </i>
                       </a>
                     </td>

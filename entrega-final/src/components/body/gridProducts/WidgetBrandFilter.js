@@ -88,7 +88,7 @@ const WidgetBrandFilter = () => {
             <div key={Category.brand_id}>
               <StyledCheckbox />
               {Category.brand_description}
-              <span className="text-muted">(254)</span>
+              <span className="text-muted"> (254)</span>
             </div>
           );
         })}

@@ -1,28 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { Categorys } from "../../components/Product/CategoryFeaturedData";
 import CategoryFeaturedComponent from "../../components/body/CategoryFeatured/CategoryFeaturedComponent";
+import { db } from "../../components/Firebase/Firebase";
+import Loading from "../../components/Loading/Loading";
 
 const SlideCategoryFeatured = () => {
+  const [isloading, setisLoading] = useState(true);
   const [DataCategory, SetDataCategory] = useState([]);
 
   useEffect(() => {
-    SetDataCategory(Categorys);
+    const getData = async () => {
+      const { docs } = await db.collection("categorys").get();
+      const data = docs.map((item) => ({ id: item.id, ...item.data() }));
+      SetDataCategory(data);
+      setisLoading(false);
+    };
+
+    getData();
   }, []);
 
   return (
-    <section className="container padding-top-3x">
-      <div className="row">
-        {DataCategory?.map((Category) => {
-          //console.log(Category)
-          return (
-            <CategoryFeaturedComponent
-              data={Category}
-              key={Category.product_id}
-            />
-          );
-        })}
-      </div>
-    </section>
+    <div>
+      {isloading ? (
+        <Loading />
+      ) : (
+        <section className="container padding-top-3x">
+          <div className="row">
+            {DataCategory?.map((DataCategory) => {
+              return (
+                <CategoryFeaturedComponent
+                  data={DataCategory}
+                  key={DataCategory.id}
+                />
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </div>
   );
 };
 

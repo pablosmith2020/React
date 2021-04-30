@@ -9,10 +9,10 @@ const bodyHome = () => {
       <div className="text-center">
         <CategoryFeatured />
       </div>
-
+     
       <a className="btn btn-outline-secondary margin-top-none" href="/#">
         Ver Todas las Categorias
-      </a>
+      </a> 
     </div>
   );
 };
