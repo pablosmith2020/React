@@ -1,150 +1,52 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext/CartContext";
-
-import Img1 from "../../../img/products/01.jpg";
-import Img2 from "../../../img/products/02.jpg";
-import Img3 from "../../../img/products/03.jpg";
-import Img4 from "../../../img/products/04.jpg";
-import Img5 from "../../../img/products/05.jpg";
-import Img6 from "../../../img/products/06.jpg";
-import Img7 from "../../../img/products/07.jpg";
-import Img8 from "../../../img/products/08.jpg";
-import Img9 from "../../../img/products/09.jpg";
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Rating from "@material-ui/lab/Rating";
+import "../../header/MenuBurger.css";
 
 const GridProductCard = ({ data }) => {
-  const myStylePiture = { width: "224", height: "144" };
-
   const { AddProduct } = useContext(CartContext);
-
-  const mySwitchFunctionImg = (param) => {
-    switch (param) {
-      case 1:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img1}
-            alt="Product"
-            style={{ myStylePiture }}
-          ></img>,
-        ];
-      case 2:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img2}
-            alt="Product"
-          ></img>,
-        ];
-      case 3:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img3}
-            alt="Product"
-          ></img>,
-        ];
-      case 4:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img4}
-            alt="Product"
-          ></img>,
-        ];
-      case 5:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img5}
-            alt="Product"
-          ></img>,
-        ];
-      case 6:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img6}
-            alt="Product"
-          ></img>,
-        ];
-      case 7:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img7}
-            alt="Product"
-          ></img>,
-        ];
-      case 8:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img8}
-            alt="Product"
-          ></img>,
-        ];
-      case 9:
-        return [
-          <img
-            key={data.product_id}
-            id={data.product_id}
-            src={Img9}
-            alt="Product"
-          ></img>,
-        ];
-      default:
-        return null;
-    }
-  };
-
-  // TODO- Estilos quemanejan la Card style="position: absolute; left: 0px; top: 0px;"*/
-  //const myStyleBody = { position: 'absolute' , left: '0px', top:'0px' };
-  //const myStyleBody = { width: "263", high: "308"};
-  //console.log(myStyleBody)
 
   return (
     <div className="grid-item" style={{ width: 263, padding: 18 }}>
       <div className="product-card">
+        <div className="rating-stars">
+          <Rating name="half-rating" defaultValue={2} precision={1} readOnly />
+        </div>
         <div className="product-badge text-danger">
-          {data.discount_rate} Off
+          {data.discount_rate !== 0 ? data.discount_rate + "% off" : null}
         </div>
         <Link
           to={`Product/${data.product_id}`}
           className="product-thumb"
         ></Link>
-        {mySwitchFunctionImg(data.product_id)}
+        <img
+          key={data.product_id}
+          id={data.product_id}
+          src={data.img1}
+          alt="Product"
+          className="myStylePiture"
+        ></img>
         <h3 className="product-title">
-          <Link to={`Product/${data.product_id}`} className="product-thumb">
+          <Link to={`Product/${data.id}`} className="product-thumb">
             {data.description}
           </Link>
         </h3>
         <h4 className="product-price">
-          <del>{data.price_old}</del>
-          {data.price}
+          <del>{data.discount_rate !== 0 ? "$" + data.price_old : null}</del>
+          {"$" + data.price}
         </h4>
         <div className="product-buttons">
-          <button
-            className="btn btn-outline-secondary btn-sm btn-wishlist"
-            data-toggle="tooltip"
-            title=""
-            data-original-title="Favoritos"
-          >
-            <i className="icon-heart"></i>
+          <button className="btn btn-outline-secondary btn-sm btn-wishlist">
+            <FontAwesomeIcon icon={faHeart} fixedWidth color="#39B5F1" />
           </button>
           <button
             className="btn btn-outline-primary btn-sm"
-            id={data.product_id}
-            onClick={() => AddProduct(data.product_id)}
+            id={data.id}
+            onClick={() => AddProduct(data.id)}
           >
             AGREGAR
           </button>

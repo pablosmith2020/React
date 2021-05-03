@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import CartEmpty from "../../../img/CartEmpty.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import foto1 from "../../../img/cart-dropdown/00.jpg";
 
 const Card = () => {
   const { Cart, TotalAmount, DeleteProdcuct, DeleteAllProdcuct } = useContext(
@@ -79,7 +78,7 @@ const Card = () => {
                         >
                           <img
                             id={`img-${Car.id}`}
-                            src={foto1}
+                            src={Car.img1}
                             alt="Imagen"
                           ></img>
                         </a>
@@ -131,7 +130,7 @@ const Card = () => {
                       className="text-center text-lg text-medium"
                     >
                       {" "}
-                      $ {Car.price}
+                      $ {Car.total}
                     </td>
                     <td
                       id={`td4-${Car.id}`}

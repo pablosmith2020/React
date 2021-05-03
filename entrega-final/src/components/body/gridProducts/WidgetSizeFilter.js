@@ -1,43 +1,37 @@
-
 import React, { useState, useEffect } from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-
-
-const DataSizes= [
-{
-  id: 1,
-  description: "XL",
-  count: 208
-},
-{
-  id: 2,
-  description: "L",
-  count: 311
-},
-{
-  id: 3,
-  description: "M",
-  count: 485
-},
-{
-  id: 4,
-  description: "S",
-  count: 213
-}
-]
-
+const DataSizes = [
+  {
+    id: 1,
+    description: "XL",
+    count: 208,
+  },
+  {
+    id: 2,
+    description: "L",
+    count: 311,
+  },
+  {
+    id: 3,
+    description: "M",
+    count: 485,
+  },
+  {
+    id: 4,
+    description: "S",
+    count: 213,
+  },
+];
 
 const WidgetSizeFilter = () => {
   const [Sizes, SetSizes] = useState([]);
- 
+
   useEffect(() => {
     SetSizes(DataSizes);
-  }, []); 
-
-console.log(Sizes)
+  }, []);
 
   const useStyles = makeStyles({
     root: {
@@ -103,25 +97,23 @@ console.log(Sizes)
       />
     );
   }
-  
 
   return (
     <div>
-    <section className="widget">
-      <h3 className="widget-title">Filtro X Tamaño</h3>
+      <section className="widget">
+        <h3 className="widget-title">Filtro X Tamaño</h3>
 
-      {Sizes?.map((size) => {
-        return (
-          <div key={size.id}>
-            <StyledCheckbox />
-            {size.description}
-            <span className="text-muted"> ({size.count})</span>
-          </div>
-        );
-      })}
-
-    </section>
-  </div>
+        {Sizes?.map((size) => {
+          return (
+            <div key={size.id}>
+              <StyledCheckbox />
+              {size.description}
+              <span className="text-muted"> ({size.count})</span>
+            </div>
+          );
+        })}
+      </section>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import foto1 from "../../img/cart-dropdown/00.jpg";
+
 
 const HeaderCart = () => {
   const { Cart, TotalAmount, DeleteProdcuct } = useContext(CartContext);
@@ -46,7 +46,7 @@ const HeaderCart = () => {
                   className="dropdown-product-thumb"
                   href="/#"
                 >
-                  <img id={`img-${Car.id}`} src={foto1} alt="Imagen Producto" />
+                  <img id={`img-${Car.id}`} src={Car.img1} alt="Imagen Producto" />
                 </a>
                 <div id={`div-${Car.id}`} className="dropdown-product-info">
                   <a

@@ -1,63 +1,47 @@
 import React, { useState, useEffect } from "react";
 import GridProductCard from "./GridProductCard";
-import { Categorys } from "../../Product/ProductsGridCard";
+import { db } from "../../Firebase/Firebase";
+import Loading from "../../Loading/Loading";
 import WidgetGridProductPagination from "./WidgetGridProductPagination";
 
 const GridProductsComponent = () => {
-  const [DataCategory, SetCategory] = useState([]);
+  const [isloading, setisLoading] = useState(true);
+  const [DataProduct, SetDataProduct] = useState([]);
+
+  const getData = async () => {
+    db.collection("products").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      SetDataProduct(docs);
+      setisLoading(false);
+    });
+  };
 
   useEffect(() => {
-    SetCategory(Categorys);
+    getData();
   }, []);
-
- 
-
-  
 
   return (
     <div className="col-xl-9 col-lg-8 order-lg-2">
-      {/*       <!-- Shop Toolbar--> */}
-      {/* <div className="shop-toolbar paddingBottom-1x mb-2">
-        <div className="column">
-          <div className="shop-sorting">
-            <label>Ordenar por:</label>
-            <select className="form-control" id="sorting">
-              <option>Mas Popular</option>
-              <option>Menor Precio</option>
-              <option>Mayor Precio</option>
-              <option>Mejor Puntuacion</option>
-              <option>A - Z </option>
-              <option>Z - A </option>
-            </select>
-            <span className="text-muted">Visualizando:&nbsp;</span>
-            <span>1 - 12 Items</span>
+      {isloading ? (
+        <Loading />
+      ) : (
+        <div>
+          <div
+            className="isotope-grid cols-3 mb-2"
+            style={{ position: "relative" }}
+          >
+            <div className="gutter-sizer"></div>
+            <div className="grid-sizer"></div>
+            {DataProduct?.map((Product) => {
+              return <GridProductCard data={Product} key={Product.id} />;
+            })}
           </div>
+          <WidgetGridProductPagination />
         </div>
-        <div className="column">
-          <div className="shop-view">
-          </div>
-        </div>
-      </div> */}
-
-      {/* <!-- Products Grid--> */}
-
-      <div
-        className="isotope-grid cols-3 mb-2"
-        style={{ position: "relative" }}
-      >
-        <div className="gutter-sizer"></div>
-        <div className="grid-sizer"></div>
-
-        {/* <!-- Product--> */}
-
-        {DataCategory?.map((Category) => {
-          //console.log(Category)
-          return <GridProductCard data={Category} key={Category.product_id} />;
-        })}
-      </div>
-
-      
-      <WidgetGridProductPagination />
+      )}
     </div>
   );
 };

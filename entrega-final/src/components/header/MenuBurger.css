@@ -84,3 +84,16 @@
     display: block;
     width: 170px;
 }
+.rating-stars {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  display: flex;
+  height: 30px;
+  width: 60px;
+}
+.myStylePiture{
+
+  width:  224px;
+  height: 144px; 
+}
