@@ -19,17 +19,15 @@ const GridProductCard = ({ data }) => {
         <div className="product-badge text-danger">
           {data.discount_rate !== 0 ? data.discount_rate + "% off" : null}
         </div>
-        <Link
-          to={`Product/${data.product_id}`}
-          className="product-thumb"
-        ></Link>
-        <img
-          key={data.product_id}
-          id={data.product_id}
-          src={data.img1}
-          alt="Product"
-          className="myStylePiture"
-        ></img>
+        <Link to={`Product/${data.product_id}`} className="product-thumb">
+          <img
+            key={data.product_id}
+            id={data.product_id}
+            src={data.img1}
+            alt="Product"
+            className="myStylePiture"
+          ></img>
+        </Link>
         <h3 className="product-title">
           <Link to={`Product/${data.id}`} className="product-thumb">
             {data.description}

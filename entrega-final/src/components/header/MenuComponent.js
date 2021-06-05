@@ -194,9 +194,11 @@ const MenuComponent = () => {
             </ul>
           </li>
           <li id="liAccountMenuCenter">
-            <a id="btnMyAccount" href="account-login.html">
-              <span>Mi Cuenta</span>
-            </a>
+        <Link to="/Acount"></Link>   
+            
+           
+              {/* <span>Mi Cuenta</span> */}
+            
           </li>
         </ul>
       </nav>
@@ -210,7 +212,7 @@ const MenuComponent = () => {
               </i>
             </div>
             <div id="ImgAccount" className="account">
-              <a href="/#"> </a>
+              <Link to='/Acount'> </Link>
               <ul
                 id="MenuAccount"
                 className="toolbar-dropdown"
@@ -243,7 +245,7 @@ const MenuComponent = () => {
                   </a>
                 </li>
               </ul>
-              <a href="account-login.html"> </a>
+              {/* <a href="account-login.html"> </a> */}
               <i>
                 <FontAwesomeIcon icon={faUser} />
               </i>

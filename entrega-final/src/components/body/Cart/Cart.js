@@ -1,28 +1,60 @@
-import Select from "@material-ui/core/Select";
-
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../../CartContext/CartContext";
 import { Link } from "react-router-dom";
 import CartEmpty from "../../../img/CartEmpty.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import Select from "@material-ui/core/Select";
+import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const Card = () => {
-  const { Cart, TotalAmount, DeleteProdcuct, DeleteAllProdcuct } = useContext(
+  const { Cart, UpdateProductCount,  TotalAmount, DeleteProdcuct, DeleteAllProdcuct } = useContext(
     CartContext
   );
 
-  const [state, setState] = React.useState({
-    count: "0",
-    name: "hai",
-  });
+  const [state, setState] = useState(Cart);
+
   const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-  };
+     setState( event.target.value);
+   
+    /* let cart2=[] */
+    //alert('envio: ' + state.value);
+    event.preventDefault();
+
+    console.log(event.target.id)
+    console.log(event.target.value)
+    
+    /* const newCart = Cart.filter((cart)=>  cart.id === event.target.id) 
+    console.log(newCart)*/
+   /*  console.log(event.target.id)
+    const found = Cart.indexOf(event.target.id)
+
+console.log(found )
+ */
+/* cart2.slice(Cart)
+cart2[event.target.id].count= event.target.value; */
+
+    //console.log(Cart[2].count)
+    //console.log(event.target.value)
+    //console.log(event.target.id) 
+ };
+const handleSubmit=(event)=>{
+  
+}
+
+
+useEffect(() => {
+  
+console.log(Cart)
+
+
+}, []);
+
+
+
+
+
 
   const StyleCartEmpty = {
     color: "blue",
@@ -106,23 +138,52 @@ const Card = () => {
                     </td>
                     <td id={`td2-${Car.id}`} className="text-center">
                       <div id={`div2-${Car.id}`} className="count-input">
+                    
+                     {/* 
+                     <form autoComplete="off">
+                     <FormControl >
+            
                         <Select
                           className="form-control"
-                          native
+                          Id={`${Car.id}`}
+                          
                           value={Car.count}
                           onChange={handleChange}
-                          inputProps={{
-                            name: "count",
-                            id: "countProduct",
-                          }}
+                          
                         >
-                          <option aria-label="None" value="" />
-                          <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
-                          <option value={4}>4</option>
-                          <option value={5}>5</option>
+                        <MenuItem value=""></MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+
                         </Select>
+                      </FormControl>
+                      </form> */}
+
+
+        <form onSubmit={handleSubmit}>
+        <label>
+          
+          <select 
+          value={Car.count} 
+          onChange={handleChange} 
+          id={Car.id}
+          
+          >
+          
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>
+              </form>
+
+
+
                       </div>
                     </td>
                     <td

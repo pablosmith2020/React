@@ -10,8 +10,8 @@ const SearchProduct = () => {
 
   const handleInputChange = (e) => {
     setproductSearched(...productSearched, e.target.value);
-
-    console.log(e.target.value);
+    console.log("deberia Ver el String concatenado");
+    console.log(productSearched);
 
     if (e.charCode === 13) {
       console.log(" Presione Enter");
@@ -19,8 +19,9 @@ const SearchProduct = () => {
   };
 
   const handleClearInput = (e) => {
-    setproductSearched("");
+    setproductSearched(" ");
     console.log("deberia borrar");
+    console.log(productSearched);
   };
 
   return (
@@ -30,6 +31,7 @@ const SearchProduct = () => {
         name="productSearched"
         placeholder="Ingrese Producto a Buscar..."
         onKeyPress={handleInputChange}
+        value={productSearched}
       />
 
       <div className="search-tools">

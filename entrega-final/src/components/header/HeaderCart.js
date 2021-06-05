@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-
 const HeaderCart = () => {
   const { Cart, TotalAmount, DeleteProdcuct } = useContext(CartContext);
 
@@ -46,7 +45,11 @@ const HeaderCart = () => {
                   className="dropdown-product-thumb"
                   href="/#"
                 >
-                  <img id={`img-${Car.id}`} src={Car.img1} alt="Imagen Producto" />
+                  <img
+                    id={`img-${Car.id}`}
+                    src={Car.img1}
+                    alt="Imagen Producto"
+                  />
                 </a>
                 <div id={`div-${Car.id}`} className="dropdown-product-info">
                   <a
@@ -91,13 +94,15 @@ const HeaderCart = () => {
               </Link>
             </div>
             <div id="divFooter2" className="column">
-              <a
-                id="BtnHeaderCart2"
-                className="btn btn-sm btn-block btn-success"
-                href="checkout-address.html"
-              >
-                Comprar
-              </a>
+              <Link to="/FinishBuy">
+                <a
+                  id="BtnHeaderCart2"
+                  className="btn btn-sm btn-block btn-success"
+                  href="checkout-address.html"
+                >
+                  Comprar
+                </a>
+              </Link>
             </div>
           </div>
         </div>
